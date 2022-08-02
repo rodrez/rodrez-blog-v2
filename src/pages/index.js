@@ -1,17 +1,17 @@
-import React from 'react'
+import HomeIntro from '@components/home/Intro'
+import Newsletter from '@components/home/Newsletter'
+import Projects from '@components/home/Projects'
 import Skills from '@components/home/Skills'
 import HeroImage from '@components/svg/HeroImage'
-import Newsletter from '@components/home/Newsletter'
 import { useTheme } from 'next-themes'
-import Projects from '@components/home/Projects'
-import HomeIntro from '@components/home/Intro'
+import React from 'react'
 
 const About = () => {
   const { resolvedTheme } = useTheme()
 
   return (
     <div className={resolvedTheme === 'dark' ? '-mt-6' : ' -mt-6'}>
-      <div className="mx-auto flex w-11/12 flex-col items-center justify-center pt-16 md:pt-52 xl:w-9/12">
+      <div className="mx-auto flex w-11/12 flex-col items-center justify-center pt-16 md:pt-52 xl:w-11/12">
         <div className="mx-auto mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2 ">
           <HomeIntro />
           {/* TODO: Adjust bg image */}

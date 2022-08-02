@@ -1,6 +1,6 @@
 ---
 name: Fabian Rodriguez
-avatar: /static/images/avatar.png
+avatar: /static/images/fabio.jpg
 occupation: Software Engineer
 company: Schenker
 email: fabian.rodrez@gmail.com

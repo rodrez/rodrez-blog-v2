@@ -59,11 +59,9 @@ Some new possibilities include loading components directly in the mdx file using
 For example, the following jsx snippet can be used directly in an MDX file to render the page title component:
 
 ```jsx
-import PageTitle from './PageTitle.js'
-<PageTitle> Using JSX components in MDX </PageTitle>
+import PageTitle from '../../components/PageTitle.js'
+;<PageTitle> Using JSX components in MDX </PageTitle>
 ```
-
-import PageTitle from './PageTitle.js'
 
 <PageTitle> Using JSX components in MDX </PageTitle>
 
@@ -334,7 +332,7 @@ To modify the styles, change the following class selectors in the `prism.css` fi
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500 bg-gray-700 bg-opacity-50;
+  @apply border-primary-500 -mx-4 border-l-4 bg-gray-700 bg-opacity-50;
 }
 
 .line-number::before {

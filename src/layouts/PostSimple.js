@@ -1,11 +1,11 @@
+import Comments from '@components/comments'
 import Link from '@components/Link'
 import PageTitle from '@components/PageTitle'
+import ScrollTopAndComment from '@components/ScrollTopAndComment'
 import SectionContainer from '@components/SectionContainer'
 import { BlogSEO } from '@components/SEO'
 import siteMetadata from '@data/siteMetadata'
 import formatDate from '@libs/utils/formatDate'
-import Comments from '@components/comments'
-import ScrollTopAndComment from '@components/ScrollTopAndComment'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { date, title } = frontMatter
@@ -21,7 +21,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd
+                    id={'published_on'}
+                    className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
+                  >
                     <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                 </div>
@@ -36,7 +39,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="dark:prose-dark prose max-w-none pt-10 pb-8">{children}</div>
+              <div className="dark:prose-dark prose max-w-none pt-10 pb-8 prose-code:text-code dark:prose-invert dark:prose-pre:bg-[#00051D]">
+                {children}
+              </div>
             </div>
             <Comments frontMatter={frontMatter} />
             <footer>

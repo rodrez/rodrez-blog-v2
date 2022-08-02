@@ -1,6 +1,6 @@
-import SocialIcon from '@components/social-icons'
 import Image from '@components/Image'
 import { PageSEO } from '@components/SEO'
+import SocialIcon from '@components/social-icons'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
@@ -33,7 +33,9 @@ export default function AuthorLayout({ children, frontMatter }) {
               <SocialIcon kind="twitter" href={twitter} />
             </div>
           </div>
-          <div className="dark:prose-dark prose max-w-none pt-8 pb-8 xl:col-span-2">{children}</div>
+          <div className="prose max-w-none pt-8 pb-8 dark:prose-invert dark:prose-pre:bg-[#00051D] xl:col-span-2">
+            {children}
+          </div>
         </div>
       </div>
     </>

@@ -1,9 +1,9 @@
 import Link from '@components/Link'
+import Pagination from '@components/Pagination'
 import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
-import { useState } from 'react'
-import Pagination from '@components/Pagination'
 import formatDate from '@libs/utils/formatDate'
+import { useState } from 'react'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -73,7 +73,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         ))}
                       </div>
                     </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                    <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
                       {summary}
                     </div>
                   </div>

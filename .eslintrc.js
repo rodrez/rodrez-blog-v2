@@ -6,6 +6,7 @@ module.exports = {
     node: true,
     es6: true,
   },
+  plugins: ['simple-import-sort'],
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'next', 'next/core-web-vitals'],
   rules: {
     'prettier/prettier': 'error',
@@ -13,5 +14,7 @@ module.exports = {
     'react/prop-types': 0,
     'no-unused-vars': 0,
     'react/no-unescaped-entities': 0,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 }

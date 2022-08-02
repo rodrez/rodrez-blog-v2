@@ -6,15 +6,25 @@ module.exports = {
     optimizeUniversalDefaults: true,
   },
   content: [
-    './src/pages/**/*.js',
-    './src/components/**/*.js',
-    './src/layouts/**/*.js',
-    './src/lib/**/*.js',
-    './src/data/**/*.mdx',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/layouts/**/*.{js,jsx,ts,tsx}',
+    './src/lib/**/*.{js,jsx,ts,tsx}',
+    './src/data/**/*.{md,mdx}',
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        darkMode: ['darkmode-off', 'sans-serif'],
+        adventor: ['adventor', 'sans-serif'],
+        'adventor-bold': ['adventor-bold', 'sans-serif'],
+        'adventor-italic': ['adventor-italic', 'sans-serif'],
+        'adventor-italic-bold': ['adventor-italic-bold', 'sans-serif'],
+        halyard: ['halyard-display', 'sans-serif'],
+        sriracha: ['Sriracha', 'cursive'],
+        'press-start': ['"Press Start 2P"', 'cursive'],
+      },
       colors: {
         background: '#2C2450',
         primary: '#CFABF9',
@@ -33,11 +43,7 @@ module.exports = {
         'dark-container': '#131B30',
         'dark-input': '#1E2A43',
         'dark-cover': '#28374A',
-      },
-      fontFamily: {
-        halyard: ['halyard-display', 'sans-serif'],
-        sriracha: ['Sriracha', 'cursive'],
-        'press-start': ['"Press Start 2P"', 'cursive'],
+        code: 'rgb(199, 146, 234)',
       },
     },
   },

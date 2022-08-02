@@ -1,6 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://use.typekit.net/ccr7tzi.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: adventor-bold;
+  font-display: auto;
+  src: url(../../public/fonts/adventor/texgyreadventor-bold.woff) format('woff');
+}
+@font-face {
+  font-family: adventor;
+  font-display: auto;
+  src: url(../../public/fonts/adventor/texgyreadventor-regular.woff) format('woff');
+}
+@font-face {
+  font-family: adventor-italic;
+  font-display: auto;
+  src: url(../../public/fonts/adventor/texgyreadventor-italic.woff) format('woff');
+}
+@font-face {
+  font-family: adventor-italic-bold;
+  font-display: auto;
+  src: url(../../public/fonts/adventor/texgyreadventor-bolditalic.woff) format('woff');
+}
+
+.main-gradient {
+  background-image: linear-gradient(
+    130deg,
+    hsl(201deg 100% 63%) 0%,
+    hsl(202deg 100% 58%) 11%,
+    hsl(202deg 100% 51%) 22%,
+    hsl(205deg 100% 52%) 33%,
+    hsl(213deg 100% 58%) 44%,
+    hsl(222deg 98% 63%) 56%,
+    hsl(234deg 89% 66%) 67%,
+    hsl(251deg 79% 63%) 78%,
+    hsl(267deg 71% 55%) 89%,
+    hsl(284deg 92% 42%) 100%
+  );
+}
+
+.gradient-text {
+  background-image: linear-gradient(
+    130deg,
+    hsl(201deg 100% 63%) 0%,
+    hsl(202deg 100% 58%) 11%,
+    hsl(202deg 100% 51%) 22%,
+    hsl(205deg 100% 52%) 33%,
+    hsl(213deg 100% 58%) 44%,
+    hsl(222deg 98% 63%) 56%,
+    hsl(234deg 89% 66%) 67%,
+    hsl(251deg 79% 63%) 78%,
+    hsl(267deg 71% 55%) 89%,
+    hsl(284deg 92% 42%) 100%
+  );
+  @apply from-violet-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent;
+}
 
 .task-list-item::before {
   @apply hidden;
@@ -52,37 +112,7 @@ h6 {
   @apply text-2xl font-bold;
 }
 code {
-  @apply rounded bg-slate-700 px-1 py-0.5 font-mono text-white;
-}
-:root {
-  --shadow-color: 216deg 42% 11%;
-  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
-}
-
-.dark-real-shadow-sm {
-  box-shadow: var(--shadow-elevation-low);
-}
-
-.dark-real-shadow-md {
-  box-shadow: var(--shadow-elevation-medium);
-}
-
-.dark-real-shadow-lg {
-  box-shadow: var(--shadow-elevation-high);
+  @apply rounded bg-slate-700 px-1 py-0.5 font-mono text-code prose-pre:bg-[#00051D] dark:bg-[#00051D];
 }
 
 .dimensional-one::after {
@@ -158,39 +188,6 @@ code {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/* 
-.light-real-shadow-sm {
-  --shadow-color: 286deg 36% 56%;
-  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
-
-  box-shadow: var(--shadow-elevation-low);
-}
-
-.light-real-shadow-md {
-  --shadow-color: 286deg 36% 56%;
-  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-
-  box-shadow: var(--shadow-elevation-medium);
-}
-
-.light-real-shadow-lg {
-  --shadow-color: 286deg 36% 56%;
-  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
-  box-shadow: var(--shadow-elevation-high);
-} */
-
 .split-item {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -269,94 +266,6 @@ code {
 
 .test-btn {
   @apply rounded-xl bg-blue-500 px-8 py-3 text-white;
-}
-
-:root {
-  --shadow-color: 214deg 42% 11%;
-  --shadow-cover-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-cover-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-cover-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-green: 134deg 69% 40%;
-  --shadow-green-low: 0.3px 0.5px 0.7px hsl(var(--shadow-green) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-green) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-green) / 0.34);
-  --shadow-green-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-green) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-green) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-green) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-green) / 0.36);
-  --shadow-green-high: 0.3px 0.5px 0.7px hsl(var(--shadow-green) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-green) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-green) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-green) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-green) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-green) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-green) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-green) / 0.34);
-  /* Perspective */
-  --perspective-500: 500;
-
-  --shadow-pink: 293deg 63% 36%;
-  --shadow-pink-low: 0.3px 0.5px 0.7px hsl(var(--shadow-pink) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-pink) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-pink) / 0.34);
-  --shadow-pink-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-pink) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-pink) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-pink) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-pink) / 0.36);
-  --shadow-pink-high: 0.3px 0.5px 0.7px hsl(var(--shadow-pink) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-pink) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-pink) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-pink) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-pink) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-pink) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-pink) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-pink) / 0.34);
-
-  --shadow-white: 0deg 0% 63%;
-  --shadow-white-low: 0.3px 0.5px 0.7px hsl(var(--shadow-white) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-white) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-white) / 0.34);
-  --shadow-white-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-white) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-white) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-white) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-white) / 0.36);
-  --shadow-white-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-white) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-white) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-white) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-white) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-white) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-white) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-white) / 0.34);
-
-  --shadow-dark: 222deg 66% 6%;
-  --shadow-dark-low: 0.3px 0.5px 0.7px hsl(var(--shadow-dark) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-dark) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-dark) / 0.34);
-  --shadow-dark-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-dark) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-dark) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-dark) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-dark) / 0.36);
-  --shadow-dark-high: 0.3px 0.5px 0.7px hsl(var(--shadow-dark) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-dark) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-dark) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-dark) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-dark) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-dark) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-dark) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-dark) / 0.34);
 }
 
 svg#freepik_stories-oops-404-error-with-a-broken-robot:not(.animated) .animable {
@@ -468,5 +377,9 @@ svg#freepik_stories-oops-404-error-with-a-broken-robot.animated #freepik--speech
 }
 
 .text-greadient {
-  @apply bg-gradient-to-r from-purple-500 to-r-purple bg-clip-text font-extrabold text-transparent dark:from-dark-green dark:to-light-green;
+  @apply bg-gradient-to-r from-violet-600 to-r-purple bg-clip-text font-extrabold text-transparent dark:from-dark-green dark:to-light-green;
+}
+
+.main-color {
+  @apply bg-gradient-to-br from-violet-600 via-blue-500 to-cyan-400;
 }

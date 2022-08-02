@@ -1,13 +1,17 @@
-import siteMetadata from '@data/siteMetadata'
 import headerNavLinks from '@data/headerNavLinks'
 import Logo from '@data/logo.svg'
-import Link from './Link'
-import SectionContainer from './SectionContainer'
+import siteMetadata from '@data/siteMetadata'
+import { useTheme } from 'next-themes'
+
 import Footer from './Footer'
+import Link from './Link'
 import MobileNav from './MobileNav'
+import SectionContainer from './SectionContainer'
 import ThemeSwitch from './ThemeSwitch'
 
 const LayoutWrapper = ({ children }) => {
+  const { resolvedTheme, setTheme } = useTheme()
+
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -40,7 +44,12 @@ const LayoutWrapper = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <ThemeSwitch />
+            <ThemeSwitch
+              onChange={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+              checked={resolvedTheme === 'light'}
+              sunColor={'#ffc107'}
+              moonColor={'#1B59F7'}
+            />
             <MobileNav />
           </div>
         </header>

@@ -1,11 +1,10 @@
 import Link from '@components/Link'
+import NewsletterForm from '@components/NewsletterForm'
 import { PageSEO } from '@components/SEO'
 import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 import { getAllFilesFrontMatter } from '@libs/mdx'
 import formatDate from '@libs/utils/formatDate'
-
-import NewsletterForm from '@components/NewsletterForm'
 
 const MAX_DISPLAY = 5
 
@@ -59,7 +58,7 @@ export default function Home({ posts }) {
                             ))}
                           </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
                           {summary}
                         </div>
                       </div>
