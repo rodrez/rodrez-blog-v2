@@ -1,0 +1,164 @@
+---
+title: 'Valid Anagram Leetcode'
+summary: 'Solution and explanations of the valid anagram leetcode problem.'
+author: 'Fabian Rodriguez'
+createdOn: '06/03/22'
+updatedOn: '06/03/22'
+key: validAnagram
+tags: ['easy', 'dsa', 'leetcode']
+draft: false
+layout: PostSimple
+---
+
+## The prompt
+
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+## What is an Anagram?
+
+An anagram is a word or phrase that can be formed by using the exact same letters from another word.
+An example of an anagram is the word <CoolText color="text-r-purple dark:text-light-green" >HEART</CoolText>, and
+
+<CoolText color="text-r-purple dark:text-light-green">EARTH</CoolText>. We use the exact same
+letters to form a completely different word. Hopefully that makes sense.
+
+## Examples
+
+<BlogTable
+  headers={['Example', 'Input 1', 'Input 2', 'Output']}
+  rows={[
+    ['1', `anagram`, `nagaram`, <span className="mark">true</span>],
+    ['2', `rat`, `cat`, <span className="mark">false</span>],
+  ]}
+/>
+
+### Constraints
+
+`1 <= s.length`, `t.length <= 5 * 104`
+
+`s` and `t` consist of lowercase English letters.
+
+### Solution #1: (Hash Map)
+
+<CodeSnippet
+  code={`def hash_is_anagram(first_word: str, second_word: str) -> bool:
+    first_hash_map = dict()
+    second_hash_map = dict()
+
+    # Loops through the first word and creates a hashmap
+    # with a count of each letter occurrence
+    for letter in first_word:
+        # We used \`.get()\` to avoid Key Error:
+        first_hash_map[letter] = first_hash_map.get(letter, 0) + 1
+
+    for _letter in second_word:
+        second_hash_map[_letter] = second_hash_map.get(_letter, 0) +1
+
+    # Compares both hash_maps
+    return first_hash_map == second_hash_map`}
+
+language="python"
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+/>
+
+<BlogWarning variant="info" title="Multiple Assignment">
+  In python you could also do `first_hash, second_hash = {}, {}`  &#8592;  This is called multiple assignment.
+
+The curly braces represent a `dict` in python.
+
+</BlogWarning>
+
+<span className="text-xl font-bold">How does it work?</span>
+
+Alright, time to tackle this one.
+
+The easiest solution that comes to mind is to count all letter occurrences
+and storing them in a hashmap or python's evil twin `dict`.
+
+To make this work we will have to loop through both words,
+save the letter as the key and keep adding to that letter count
+if a new occurrence is found to the value.
+
+Our `dict` would look like this for the word HEART:
+
+<CodeSnippet
+  code={`anagram_hash_map = { "H":1, "E":1, "A":1, "R":1, "T":1 }`}
+  language="python"
+  showLineNumbers={false}
+/>
+
+In this example we do not have any duplicate letter,
+but if we did, then we would simply add it to its respective key.
+
+For example the HELLO word, would yield the following:
+
+<CodeSnippet
+  code={`anagram_hash_map = { "H":1, "E":1, "L":2, "O":1 }`}
+  language="python"
+  showLineNumbers={false}
+/>
+Notice how L value is 2 instead of 1, since there where two occurrences for the letter O.
+
+Time Complexity: O(n) -> Two for loops n letters in the word
+Space Complexity: O(n) -> Two variables created for the hashmap
+
+<BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n)', 'O(n)']]} />
+
+### Solution #2: (Clever Sort)
+
+<CodeSnippet
+  code={`def sort_is_anagram(s: str, t: str) -> bool:
+    return sorted(s) == sorted(t)`}
+  language="python"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+<span className="text-xl font-bold">How does it work?</span>
+
+    Looks simple right?
+
+    The basis of this solution is to sort both strings
+    and then compared them.
+
+    Why does this works?
+
+    It works because when we sort the word HEART, we get the following:
+
+    `['A', 'E', 'H', 'R', 'T']`
+
+{" "}
+
+<BlogWarning variant="info" title="Multiple Assignment">
+  In python a quick way to sort a word in python is to use the `sorted(your_word)` function. Using
+  sort will return an array of all the letters. Do remember that majority of sorts have a time
+  complexity of O(n log n)
+</BlogWarning>
+Now, for the other word to be an anagram of HEART what do you think we should get? Yes! You are correct,
+we should get the exact same sorted array as above for it to be an anagram.{' '}
+
+    Let's try it...
+
+    `['A', 'E', 'H', 'R', 'T']`
+
+    Would you look at that!?
+
+    We have already done most of the work. At this point we simply compare the two arrays for equality.
+    If the arrays are equal, then we return True.
+    Otherwise, we return False since we do not have an anagram.
+
+    Do keep in mind that this solution has a wors time complexity that the previous due to the sorting.
+
+<BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n log(n))', 'O(n)']]} />
+But why is the time complexity O(n) we did not create a new variable. Well... we do need to keep in mind
+that the `sorted()` funtion has a time complexity of O(n). If you need more information, feel free to
+read about [Timsort](https://en.wikipedia.org/wiki/Timsort) which is the algorithm that the `sorted()`
+function uses in the bakground.
+
+Hopefully this was helpful! Keep on Coding!
+
+For more problems like this one be sure to checkout [NeetCode](https://neetcode.io/).

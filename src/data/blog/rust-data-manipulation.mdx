@@ -1,0 +1,71 @@
+---
+title: 'Rust Data Manipulation'
+summary: 'Lean Rust Enums, Structs, and Traits. What are these and how do they work?'
+author: 'Fabian Rodriguez'
+createdOn: '01/25/22'
+updatedOn: '01/25/22'
+tags: [rust]
+published: true
+---
+
+## Enums
+
+We can think of enum as a collection of named values. Typically these values are called variants.
+
+Enum variants can be accessed by using the enum name and the variant name.
+Looking at the example below we can access the `Color` enum and the `Red` variant
+using the `::` operator to access the `Red` variant.
+
+<CodeSnippet
+  code={`enum Color{
+    Red, 
+    Green,
+    Blue,       
+}
+
+fn main() {
+let red = Color::Red;
+let green = Color::Green;
+let bue = Color::Blue;
+}`}
+language="rust"
+showLineNumbers
+lineFocus={[8]}
+addedLines={[]}
+removedLines={[]}
+/>
+
+## Structs
+
+<CodeSnippet
+  code={`struct User {
+    username: String,
+    age: i32
+}`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+## Tuples
+<CodeSnippet
+  code={`let drink = ("coke", 1.50);
+let (drink_name, drink_price) = drink;`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+## Expressions
+
+<CodeSnippet
+  code={`let gt_ten = 10 > 5;`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>

@@ -1,0 +1,37 @@
+---
+title: 'Bubble Sort'
+summary: 'The most loved programming language in the world for 6 years.'
+author: 'Fabian Rodriguez'
+createdOn: '01/21/22'
+updatedOn: '01/21/22'
+tags: [algorithms]
+published: false
+---
+
+## What is Bubblesort?
+
+Bubblesort is a simple sorting algorithm that works by running two loops and comparing each pair of adjacent elements.
+If the first element is greater than the second element, then the two elements are swapped.
+This process is repeated until the array is sorted.
+
+## How does it work?
+
+Let's take for exmaple the following array: `[5, 3, 1, 2, 4]`
+
+The first loop will look something like this:
+
+<CodeSnippet 
+  code={`array = [5, 3, 1, 2, 4]
+
+for i in range(0, len(array)):
+for j in range(0, len(array) - i - 1):
+if array[j] > array[j + 1]:
+array[j], array[j + 1] = array[j + 1], array[j]
+`}
+
+language="python"
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+/>

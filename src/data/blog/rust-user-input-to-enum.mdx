@@ -1,0 +1,101 @@
+---
+title: 'Input to Enum in Rust'
+summary: 'Convert user input to an enum in Rust'
+author: 'Fabian Rodriguez'
+createdOn: '03/19/22'
+updatedOn: '03/19/22'
+tags: [rust]
+published: true
+---
+
+## What are trying to accomplish?
+
+THhis excersize is to convert user input to an enum in Rust.
+We will verify user input against the following keywords:
+
+- Off
+- Sleep
+- Reboot
+- Shutdown
+- Hibernate
+
+If the user enters one of the keywords, a message should be printed to the console indicating which action will be taken  
+**Example:** If the user types in "shutdown" a message should display such as "shutting down"
+
+## Step 1: Create the enum
+
+We will create the enum to hold the keywords.
+
+<CodeSnippet
+  language="rust"
+  code={`
+enum Action {
+    Off,
+    Sleep,
+    Reboot,
+    Shutdown,
+    Hibernate,
+}
+`}
+/>
+
+## Step 2: Create the function to print the message
+
+Now we will create the function that takes the enum as an argument and prints the appropriate message.
+Don't forget to borrow the enum in the argument.
+
+<CodeSnippet
+  language="rust"
+  code={`
+fn print_message(action: &Action) {
+    match action {
+        Action::Off => println!("Turning off"),
+        Action::Sleep => println!("Sleeping"),
+        Action::Reboot => println!("Rebooting"),
+        Action::Shutdown => println!("Shutting down"),
+        Action::Hibernate => println!("Hibernating"),
+    }
+}
+`}
+/>
+
+## Step 3: Create an impl for the enum to convert the user input to the enum
+
+Instead of creating another function for this conversion, we will create an impl block for the enum.
+
+We can create the impl after the enum because the enum is defined before the impl, like so.
+
+<CodeSnippet
+  language="rust"
+  code={`
+impl Action {
+    fn from(input: &str) -> Action {
+        match input {
+            "off" => Action::Off,
+            "sleep" => Action::Sleep,
+            "reboot" => Action::Reboot,
+            "shutdown" => Action::Shutdown,
+            "hibernate" => Action::Hibernate,
+        }
+    }
+}
+`}
+/>
+
+## Step 4: Getting the user input and printing the message
+
+The last piece of the puzzle is to get the user input and print the message.
+To make this work we are going to need the `std::io` module.
+
+Although this module is out of the scope of this article, click [std::io::stdin](https://doc.rust-lang.org/std/io/fn.stdin.html) to read more about it.
+
+<CodeSnippet
+  language="rust"
+  code={`
+fn main() {
+    let input = read_input();
+    let action = Action::from(input);
+    print_message(&action);
+}
+`}
+/>

@@ -1,0 +1,247 @@
+---
+title: 'Rust Basics'
+summary: 'The most loved programming language in the world for 6 years.'
+author: 'Fabian Rodriguez'
+createdOn: '01/21/22'
+updatedOn: '01/21/22'
+tags: [rust]
+published: true
+---
+
+## What is Rust Lang?
+
+Rust is a general purpose, multi-paradigm, compiled programming language that runs blazingly fast, prevents
+
+<HoverMe
+  meaning={
+    'Segmentation fault is the operating system sending a signal to the program saying that it has detected an illegal memory access and is prematurely terminating the program to prevent memory from being corrupted.'
+  }
+  children={'segfaults'}
+/> , and guarantees thread safety. Rust is a new programming language that has been gaining more and
+more attention in the recent years. It was created by Mozilla employees to help them write better code
+for Firefox. Rust has many benefits over other languages like C++. One of the main benefits of Rust is
+its ability to prevent segfaults - crashes caused by using uninitialized variables or accessing memory
+outside the bounds of an allocated block. This is possible because Rust's type system can detect illegal
+accesses before they happen at run time.
+
+## Data Types
+
+Rust has a number of data types that are used to represent different types of values.
+
+### Integer Types:
+
+<BlogTable
+  headers={['Length', 'Signed', 'Unsigned']}
+  rows={[
+    ['8-bit', 'i8', 'u8'],
+    ['16-bit', 'i16', 'u16'],
+    ['32-bit', 'i32', 'u32'],
+    ['64-bit', 'i64', 'u64'],
+    ['128-bit', 'i128', 'u128'],
+    ['arch', 'isize', 'usize'],
+  ]}
+/>
+
+### Integer Literals:
+
+<BlogTable
+  headers={['Number Literal', 'Example']}
+  rows={[
+    ['Decimal', '98_222'],
+    ['Hexadecimal', '0xff'],
+    ['Octal', '0o77'],
+    ['Binary', '0b1111_0000'],
+    ['Byte (u8 only)', "b'A'"],
+  ]}
+/>
+
+### Other Data Types:
+
+- `float` - Basically decimal Points. By default it is a `f64` \(64-bit floating point\).
+  You can specify an `f32` \(32-bit floating point\) by adding `f32` after the type.
+- `boolean` - true or false
+- `char` / `str` - A single Unicode character. Rust `char` has a fixed size of 4 bytes. It can be used to represent a single character or a Unicode scalar value.
+  This means that you can represent more than just ASCII characters. You can represent Chinese characters, emojis, and so on.
+  Note that `char` is different from `str` in that `char` is a single character whereas `str` is a sequence of characters.
+  Char is wrapped with single quotes, and str is wrapped with double quotes.
+- `str` - A string of Unicode characters
+
+<CodeSnippet 
+  code={`let x = 1.0; // f64
+let y: f32 = 3.0; // f32
+
+let big = true; // bool
+let small = false; // bool
+
+let letter_z = 'z'; // char
+let happy_face = '😀'; // char
+
+let greetings = "Hello"; // str`}
+language="rust"
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+fileName="main.rs"
+/>
+
+## Variables
+
+In Rust, there are two types of variables: immutable and mutable. Immutable variables cannot be changed once they are initialized. Mutable variables can be changed anytime they are in scope.
+
+Rust uses the `let` keyword to create an immutable variable and the `let mut` keyword to create a mutable variable.
+
+Immutability is very important for safe programming as it prevents unexpected changes in the state of an object that might lead to errors or data loss.
+
+## Functions
+
+This is how a function looks in Rust:
+
+<CodeSnippet
+code={`fn add(x: i32, y: i32) -> i32 {
+    x + y
+}`}
+language="rust" 
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+/>
+- `fn` - is the function keyword
+- `add` - is the name of the function
+- `x:` - is the parameter name
+- `i32` - is the type of the parameter (i32 is an integer of 32 bits)
+- `y:` - is the second parameter name
+- `i32` - is the type of the second parameter
+- `->` - signifies that the function returns a value, it a dash and a greater than sign
+- `i32` - is the type of the return value
+- `{` - signifies the start of the function body
+- `x` + y - is the code inside the function body
+- `}` - signifies the end of the function body
+
+## Macros
+
+Macros are very similar to functions. One big difference is that macros use an `!` to call.
+In it's simpler form macros generate additional Rust code.
+
+<CodeSnippet
+  code={`println!("Hello, world!");
+println!("Hello {}", "World");
+println!("{}, {:?}", "Hello", "world!");`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+**Line #1** is a macro that prints \(displays\) the string "Hello, world!".  
+**Line #2** is a macro that prints the string "Hello World". Notice the `{}` in the macro.
+This is a placeholder for the string "World" which is the second parameter of the macro.  
+**Line #3** is a macro that prints the Hello, "world!".
+Notice the `{:?}` in the macro. This is a placeholder for the string "world!". However, the string "world!" is not just passed to
+the macro, it was passed in debug format. This is because the macro is called in debug mode.
+
+## Control Flow
+
+Just like in other programming languages, Rust has a number of control flow statements. These are:
+
+- `if`
+- `else if`
+- `else`
+
+A simple control flow example to start your self driving car would look like this:
+
+<CodeSnippet
+  code={`let age = 20;
+  if age > 70 {
+    println!("You are living life!");
+} else if age > 18 {
+    println!("Tesla is starting!");
+} else {
+    println!("You can't drive!");
+}`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+## Loops and Iterations
+
+`loop` is a loop that runs forever. We can think of `loop` as your average `for` loop.
+
+An example of a loop is:
+
+<CodeSnippet
+  code={`let mut beers = 0;
+loop {
+    if beers == 5 {
+    println!("You can't drive anymore.");
+    break;
+    }
+    println!("You have drink {:?} beers" , beers);
+    beers = beers + 1;
+}`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+<BlogWarning variant="info" title="mut keyword">
+  Note we are using the keyword `mut` to create a mutable variable. This is because we are creating
+  a loop that will change/update the value of variable `beers`.
+</BlogWarning>
+
+Similarly, a `while` loop is a loop that checks a condition before running the loop body.
+
+<CodeSnippet
+  code={`let mut beers = 0;
+while beers != 5 {
+    println!("You have drink {:?} beers" , beers);
+    beers = beers + 1;
+}`}
+  language="rust"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+<BlogWarning variant="info" title="!= operator">
+  The `!=` operator is used to check if a value is not equal to another value.
+</BlogWarning>
+
+## Match
+
+The `match` keyword is used to match a value to a pattern. Much like `if` - `else` statements,
+`match` checks against conditions. Now, the main difference between `match` and `if` - `else` statements is that
+`match` checks for every possibility unless an underscore is passed. We'll see this in the next example.
+
+<CodeSnippet
+  code={`fn main() {
+    let car = "Camaro";
+
+    match car {
+        "Camaro" => println!("It's a Camaro"),
+        "Charger" => println!("It's a Charger"),
+        _ => println!("What the heck is that"),
+    }
+
+}`}
+language="rust"
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+/>
+
+As we can see from the example above, `match` checks for every possible value of `car`.
+If the value of `car` is **Camaro**, it will print **"It's a Camaro"**.  
+If the value of `car` is **Charger**, it will print **"It's a Charger"**.
+
+If the value of `car` is anything else, it will print "What the heck is that". Because `match` checks for every possible value,
+and the underscore signifies that it will check for every other value that is not explicitly checked.

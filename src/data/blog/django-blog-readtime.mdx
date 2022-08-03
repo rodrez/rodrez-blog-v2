@@ -1,0 +1,104 @@
+---
+title: 'Django Blog Readtime'
+summary: 'Simple Django readtime for your blog posts.'
+author: 'Fabian Rodriguez'
+createdOn: '01/21/22'
+updatedOn: '01/21/22'
+tags: [django, react]
+published: true
+---
+
+In this tutorial, we are going to learn how to add read time to your Django Blog Posts.
+
+First, we need to type the following command in the terminal.
+
+<CodeSnippet
+  code={`pip install readtime`}
+  language="bash"
+  showLineNumbers={false}
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+Next, we are going to import readtime into our models.py
+
+<CodeSnippet
+  code={`import readtime`}
+  language="python"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+/>
+
+For the next step we need, to define a function to get the read time of our Blog Posts. We can do so by writing the following code:
+
+<CodeSnippet
+  code={`def get_readtime(self):
+  result = readtime.of_text(self.content)
+  return result.text`}
+  language="python"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+  fileName="models.py"
+/>
+
+<BlogWarning
+variant="info"
+>
+
+Note: The function above must be placed as a method inside the class Post see the code snippet below.
+
+</BlogWarning>
+
+<CodeSnippet
+code={`class Post(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    tags = TaggableManager()
+
+def get_readtime(self):
+result = readtime.of_text(self.content)
+return result.text`}
+language="python"
+showLineNumbers
+lineFocus={[]}
+addedLines={[]}
+removedLines={[]}
+fileName='models.py'
+/>
+
+To show the read time in your blog post you can simply call them in the template of your choice, as shown below.
+
+<CodeSnippet
+  code={`
+<h2 class="card-title">{{ post.title }}</h2>
+<p class="badge badge-secondary">
+    Read Time {{ post.get_readtime }}
+</p>`}
+  language="html"
+  showLineNumbers
+  lineFocus={[]}
+  addedLines={[]}
+  removedLines={[]}
+  fileName="your_template.html"
+/>
+
+BAM! You are done!
+
+<img
+  className="w-full rounded-2xl"
+  src="https://media.giphy.com/media/g9582DNuQppxC/giphy-downsized-large.gif"
+/>
+
+If you got to this point and this post helped you share it with your friends!

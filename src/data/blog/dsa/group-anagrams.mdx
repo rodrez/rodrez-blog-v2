@@ -1,0 +1,62 @@
+---
+title: 'Group Anagrams Leetcode'
+summary: 'Solutions, explanations and time complexity of the group anagram.'
+date: '06/11/22'
+key: groupAnagrams
+tags: ['medium', 'dsa', 'leetcode']
+draft: false
+layout: PostSimple
+---
+
+## The prompt
+
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+typically using all the original letters exactly once.
+
+## Examples
+
+<BlogTable
+  headers={['Example', 'Input', 'Target', 'Output']}
+  rows={[
+    [
+      '1',
+      `["eat","tea","tan","ate","nat","bat"]`,
+      9,
+      <span className="mark">[["bat"],["nat","tan"],["ate","eat","tea"]]</span>,
+    ],
+    ['2', `[""]`, 6, <span className="mark">[""]</span>],
+    ['3', `["a"]`, 6, <span className="mark">["a"]</span>],
+  ]}
+/>
+
+### Constraints
+
+- `1 <= strs.length <= 104`
+- `0 <= strs[i].length <= 100`
+- strs[i] consists of lowercase English letters. (26 letters)
+
+### Solution #1: (Sorted)
+
+<CodeSnippet
+  code={`def sorted_group_anagram(array):
+    hashmap = {}
+    for word in array:
+        sorted_word = tuple(sorted(word))
+
+        hashmap[sorted_word] = hashmap.get(sorted_word, []) + [word]
+
+    return hashmap.values()
+
+sorted_group_anagram(a)`}
+language="python"
+showLineNumbers
+/>
+
+<span className="text-xl font-bold">How does it work?</span>
+
+Work in Porgress...
+
+See you on the next problem!
+
+For more problems like this one be sure to checkout [NeetCode](https://neetcode.io/).

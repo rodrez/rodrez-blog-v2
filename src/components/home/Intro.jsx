@@ -21,7 +21,7 @@ const GetInTouch = ({ style }) => (
   <Link href="/contact" passHref>
     <animated.button
       className={
-        'main-color mx-auto mt-8 flex rounded-xl border-0 py-2 px-8 text-2xl font-bold text-white hover:bg-opacity-80  dark:text-dark-background lg:mx-0'
+        'main-color mx-auto mt-8 flex rounded-xl border-0 py-2 px-8 text-2xl font-bold text-white hover:bg-opacity-80 lg:mx-0'
       }
     >
       Get In Touch

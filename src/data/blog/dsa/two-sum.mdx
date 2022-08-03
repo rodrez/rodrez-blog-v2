@@ -1,0 +1,179 @@
+---
+title: 'Two Sum Leetcode'
+summary: 'Solution and explanations of the two sum leetcode problem.'
+author: 'Fabian Rodriguez'
+date: '06/05/22'
+key: twoSum
+tags: ['easy', 'dsa', 'leetcode']
+draft: false
+layout: PostSimple
+---
+
+## The prompt
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+
+## Examples
+
+<BlogTable
+  headers={['Example', 'Input', 'Target', 'Output']}
+  rows={[
+    ['1', `[2,7,11,15]`, 9, <span className="mark">[0,1]</span>],
+    ['2', `[3,2,4]`, 6, <span className="mark">[1,2]</span>],
+    ['3', `[3,3]`, 6, <span className="mark">[0,1]</span>],
+  ]}
+/>
+
+### Constraints
+
+`2 <= nums.length <= 104` & `-109 <= nums[i] <= 109` & `-109 <= target <= 109`
+
+Only one valid answer exists.
+
+### Solution #1: (Naive)
+
+<CodeSnippet
+  code={`def naive_two_sum(nums: List[int], target: int) -> List[int]:
+    for num in range(len(nums)):
+        for n in range(len(nums[num + 1:])):
+            if nums[num] + nums[n + num + 1] == target:
+                return [num, n + num + 1]`}
+  language="python"
+  showLineNumbers
+/>
+
+<span className="text-xl font-bold">How does it work?</span>
+
+Since this is a naive solution, we can use nested loops.
+
+The first loop simple iterates over the array as usual, we will call this loop the
+
+<CoolText color="text-r-purple dark:text-light-green">parent loop</CoolText>. Now the second one, or
+<CoolText color="text-r-purple dark:text-light-green"> child loop </CoolText>
+is a little bit more tricky. The second loop will loop through the remainder of the the array after
+the first loop goes over the `nth` element.
+
+For example:
+
+Let's assume we have `nums = [1,2,3,4]` and the target is 6.
+
+The first loop will start at index 0, in this case accessing "1".
+
+<Indexing length={4} highlight={[0]} />
+
+Now the second loop, loops through an array that start after the index of the parent loop.
+Because the parent loop current index is **0** the second loop start at index **1**. In simpler terms
+we will always slice the array, starting at the current index of the parent loop and adding 1.
+
+So it would look something like this:
+
+<Indexing length={3} start={1} highlight={[0]} />
+
+<BlogWarning variant="info" title="Same Array">
+  Do note that we are using the exact same array.
+</BlogWarning>
+
+If the parent loop current index is **2** then the child loop starts at index **3**, you get the idea.
+
+Last Example, let's say we have an arryay of 6 elements, and the parent loop is in the 4th iteration or at index 3.
+
+<Indexing length={6} start={1} highlight={[3]} />
+
+Our child loop will continue looking at the remainder of the same array, but starting at index 4 as shown below.
+
+<Indexing length={6} start={1} highlight={[4]} />
+
+Now that we understand the logic behind the nested loop we
+can start comparing the values until we find the two numbers
+that match the target.
+
+To do this we need to simply access the value from the parent loop and
+the child loop and compare them with a simple `if` statement.
+
+As you can see in line 4 of the Naive Solution, we compare the element at the parent loop current index vs
+the element of the child loop at the current `parent index + the current child index + 1`.
+
+This might be a bit confusing let's break it down based on the last example.
+
+Becuase the parent loop is current at index 3, we access the element with the value of **5**. In Python
+you can do so by `nums[num]` where nums is the array and num is the index.
+
+Now to access the element of the child loop we need to do some math. In Python it would look like
+`nums[num + n + 1]` where `nums` is the array, `num` is the index of the parent loop (3 in this case), `n` is the index of the
+child loop (0 in this case) and lastly we add 1. So if we add all of it together, we should get `nums[4]`.
+
+<CodeSnippet
+  code={`nums[num] or nums[3] is 5
+nums[num + n + 1] or nums[4] is 6`}
+  language="python"
+  showLineNumbers={false}
+/>
+
+<BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n²)', 'O(1)']]} />
+
+### Solution #2: (HashMap)
+
+<CodeSnippet
+  code={`def hash_two_sum(nums: List[int], target: int) -> List[int]:
+    hash_map = {}
+
+    for i, num in enumerate(nums):
+        remainder = target - num
+        if hash_map.get(remainder) != None:
+            return hash_map.get(remainder), i
+        hash_map[num] = i`}
+
+language="python"
+showLineNumbers
+/>
+
+<span className="text-xl font-bold">How does it work?</span>
+
+Enter hash map!
+
+Out of the box thinking at it's best.
+If this solution never crossed your mind before,
+don't worry you are not alone.
+
+Alright enough chit chat...
+
+We will complete this one with only one for loop.
+
+1. First we need to create a variable to hold our dict... Sorry I meant our hash map...
+
+2. After we have our hashmap ready we start our loop. Our loop must have index, because we will
+   be using the values in the array as keys and the index as our values for our hash map. If you are solving this with
+   python, have a look at the `enumerate()` function. It's pretty nice.
+
+3. The trick is perform by subtracting the current element from the target.
+
+4. Then adding the element to the hashmap.
+
+5. And finally trying to check if the remainder of our subtracting is a key in our hashmap.
+
+I know it's a bit confusing, but we'll go over it now.
+
+In <CoolText color="text-r-purple dark:text-light-green">Line 2</CoolText> of the code snippet above we simple create a new python dictionary (hashmap). In
+
+<CoolText color="text-r-purple dark:text-light-green"> Line 4</CoolText> we start our loop with enumerate
+to get both the index and the value. (In that order).
+<CoolText color="text-r-purple dark:text-light-green">Line 5</CoolText>
+is where we create our `remainder` variable to hold the reminder of the `target - num`, num being the
+value.
+<CoolText color="text-r-purple dark:text-light-green"> Line 6</CoolText>
+is where we try to get the remainder from the hashmap. In python we use get to avoid `KeyValue Errors`.
+If we are able to get the key, that means we have two numbers that add up to the target. Soooo...
+<CoolText color="text-r-purple dark:text-light-green">Line 7 </CoolText>
+returns the index of both numbers.
+<CoolText color="text-r-purple dark:text-light-green">Line 8 </CoolText>, if the num was not in the
+hashmap, we simple add it at the end of the iteration.
+
+<BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n)', 'O(n)']]} />
+
+And that's it! Hopefully that wasn't too bad!
+
+See you on the next problem!
+
+For more problems like this one be sure to checkout [NeetCode](https://neetcode.io/).
