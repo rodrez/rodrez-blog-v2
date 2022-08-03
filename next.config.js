@@ -58,6 +58,9 @@ module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'utils'],
   },
+  images: {
+    domains: ['awv3node-homepage.surge.sh', 'source.unsplash.com'],
+  },
   async headers() {
     return [
       {

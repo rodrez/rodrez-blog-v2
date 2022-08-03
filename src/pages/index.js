@@ -19,17 +19,10 @@ const About = () => {
             <HeroImage className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'} />
           </div>
         </div>
-        <div className={'pt-32 lg:pt-52'}>
-          <Skills />
-        </div>
 
-        <div className={'w-full'}>
-          <Projects />
-        </div>
-
-        <div>
-          <Newsletter />
-        </div>
+        <Skills />
+        <Projects />
+        <Newsletter />
       </div>
     </div>
   )

@@ -24,6 +24,8 @@ module.exports = {
         halyard: ['halyard-display', 'sans-serif'],
         sriracha: ['Sriracha', 'cursive'],
         'press-start': ['"Press Start 2P"', 'cursive'],
+        display: ['Pally', 'Comic Sans MS', 'sans-serif'],
+        body: ['Pally', 'Comic Sans MS', 'sans-serif'],
       },
       colors: {
         background: '#2C2450',

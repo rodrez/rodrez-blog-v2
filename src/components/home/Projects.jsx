@@ -1,78 +1,126 @@
+import Image from '@components/Image'
 import { v4 as uuid } from 'uuid'
 
 import { classNames } from '../../utils/general'
+import LayerImage from '../Image/LayerImage'
 
 export default function Projects() {
   const projects = [
     {
       id: uuid(),
       title: 'Next OMS',
-      summary:
-        'Next OMS is a web application for managing and tracking trainings, audits and documents.',
+      description: (
+        <div className="space-y-2">
+          <p>
+            OMS is a centralized web-based system that helps tracking progress and completion of
+            training, audits and documentation. OMS also enables visibility when an employee needs
+            to be retrained or requalified.
+          </p>
+          <p>
+            Additional features includes but are not limited to reports, dashboards, data exports,
+            employee history, time spent training/auditing and more.
+          </p>
+        </div>
+      ),
+      stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+      image: 'next-oms.png',
+      link: 'https://next-oms.netlify.app/',
     },
     {
       id: uuid(),
       title: 'DSA',
-      summary: 'DSA is a blog that focus on solving and explaining Data Structures and Algorithms.',
+      description: (
+        <div className="space-y-2">
+          <p>
+            DSA is a blog that series focus on solving and explaining Data Structures and
+            Algorithms. We go into depth on topics like Linked Lists, Trees, Graphs, Heaps, etc.
+          </p>
+          <p>We cover a variety of Blind 75 questions and LeetCode problems.</p>
+        </div>
+      ),
+      stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+      image: 'dsa.png',
+      link: 'https://dsa.netlify.app/',
     },
     {
       id: uuid(),
       title: 'Mythus',
-      summary:
-        'Mythus is a career assistant that helps you find the right job, or helps you build the skills you need to get the job.',
+      description: (
+        <div className="space-y-2">
+          Mythus is a career assistant that helps you find the right job, or helps you build the
+          skills you need to get the job.
+        </div>
+      ),
+
+      stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+      image: 'mythus.png',
+      link: 'https://mythus.netlify.app/',
     },
     {
       id: uuid(),
       title: 'Aracadefi',
-      summary:
-        'Aracadefi is a web application for tracking and managing games based on crypto currencies.',
+      description: (
+        <div className="space-y-2">
+          Aracadefi is a web application for tracking and managing games based on crypto currencies.
+        </div>
+      ),
+      stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+      image: 'aracadefi.png',
+      link: 'https://aracadefi.netlify.app/',
     },
   ]
 
   return (
-    <div className="">
-      <div className="mx-auto my-20 grid w-11/12 grid-cols-1 md:gap-12 xl:grid-cols-2 xl:gap-32 ">
-        <div className="relative order-2 grid grid-cols-2 flex-wrap gap-6 xl:order-1">
-          {/* Loop 4 times */}
-          {projects.map((feature, index) => (
+    <div className={'w-full'}>
+      {/* <Projects /> */}
+      <div className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-11/12">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-10/12"
+          >
             <div
-              key={uuid()}
               className={classNames(
-                index === 1
-                  ? '-top-4 -right-4 h-[22rem] w-[22rem] p-4'
-                  : 'h-72 w-full max-w-[18rem]  grow-0 self-end p-8',
-                ' rounded-2xl bg-slate-100 shadow-lg dark:bg-[#000621] dark:shadow-slate-900'
+                index % 2 === 0 ? 'left-4 ' : 'right-4',
+                'absolute top-1/2 z-0 h-80 -translate-y-1/2 overflow-hidden rounded-lg rounded-br-3xl rounded-tl-3xl xl:w-6/12'
               )}
             >
-              <div className="">
-                <div
-                  className={classNames(
-                    'my-3 h-3 w-16 rounded-lg',
-                    index % 2 === 0 ? ' bg-dark-blue' : 'bg-r-purple'
-                  )}
-                />
-                <h5 className="text-3xl font-bold">{feature.title}</h5>
-                <p className="">{feature.summary}</p>
-              </div>
+              <LayerImage src={'https://source.unsplash.com/random/800x600'} />
             </div>
-          ))}
-
-          {/* Floating Circles */}
-          <div className="main-color absolute  -top-8 -left-8 z-[-1] h-20 w-20 rounded-3xl bg-red-400 shadow-lg" />
-          <div className="main-color absolute -bottom-16 left-[4.25rem] z-[-1] h-52 w-52 rounded-3xl shadow-xl" />
-          <div className="main-color absolute top-1/2 bottom-1/2 -right-20 z-[-1] my-auto hidden h-40 w-40 rounded-3xl md:block" />
-        </div>
-        <div className="order-1 flex flex-col justify-center md:px-6 xl:order-2 xl:px-16">
-          <h6 className="gradient-text mb-12">Projects</h6>
-          <p className="mb-12 text-5xl font-bold">Projects? We got some!</p>
-          <p className="text-lg font-light leading-loose text-[#9999B2] lg:text-2xl">
-            You&apos;ve always wanted to find a way to animate your website without all the
-            difficulty, right? Well now you can.
-          </p>
-          <button className="main-gradient my-12 mr-auto ml-auto rounded-2xl px-6 py-3 text-2xl font-bold md:ml-0 md:mr-auto xl:px-12">
-            Read More
-          </button>
-        </div>
+            <div
+              className={classNames(
+                index % 2 === 0 ? 'ml-auto text-right' : 'mr-auto',
+                'z-1 relative my-auto  w-7/12 max-w-2xl space-y-4'
+              )}
+            >
+              <p className="font-mono text-lg text-cyan-400">Featured Project</p>
+              <h4>{project.title}</h4>
+              <div
+                className={classNames(
+                  index % 2 === 0 ? 'ml-auto' : 'mr-auto',
+                  ' max-w-xl rounded-lg bg-slate-800 p-8'
+                )}
+              >
+                {project.description}
+              </div>
+              <div
+                className={classNames(
+                  index % 2 === 0 ? 'justify-end ' : 'justify-start',
+                  'flex gap-x-4 gap-y-2'
+                )}
+              >
+                {project.stack.split(',').map((tech) => (
+                  <span className=" font-mono text-slate-500" key={tech}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <button className="main-gradient my-6 mr-auto ml-auto rounded px-6 py-1 text-2xl font-bold md:ml-0 md:mr-auto xl:px-12">
+                Read More
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import headerNavLinks from '@data/headerNavLinks'
 import Logo from '@data/logo.svg'
 import siteMetadata from '@data/siteMetadata'
 import { useTheme } from 'next-themes'
+import { memo } from 'react'
 
 import Footer from './Footer'
 import Link from './Link'
@@ -38,7 +39,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium text-gray-900 sm:p-4"
                 >
                   {link.title}
                 </Link>
@@ -60,4 +61,4 @@ const LayoutWrapper = ({ children }) => {
   )
 }
 
-export default LayoutWrapper
+export default memo(LayoutWrapper)

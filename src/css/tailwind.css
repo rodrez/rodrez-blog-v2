@@ -45,23 +45,6 @@ html {
   );
 }
 
-.gradient-text {
-  background-image: linear-gradient(
-    130deg,
-    hsl(201deg 100% 63%) 0%,
-    hsl(202deg 100% 58%) 11%,
-    hsl(202deg 100% 51%) 22%,
-    hsl(205deg 100% 52%) 33%,
-    hsl(213deg 100% 58%) 44%,
-    hsl(222deg 98% 63%) 56%,
-    hsl(234deg 89% 66%) 67%,
-    hsl(251deg 79% 63%) 78%,
-    hsl(267deg 71% 55%) 89%,
-    hsl(284deg 92% 42%) 100%
-  );
-  @apply from-violet-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent;
-}
-
 .task-list-item::before {
   @apply hidden;
 }
@@ -85,7 +68,7 @@ input:-webkit-autofill:focus {
 }
 
 body {
-  @apply bg-slate-50 text-dark-background selection:bg-[#6b2cf5] selection:text-white dark:bg-dark-background dark:text-gray-200 dark:selection:bg-light-green dark:selection:text-dark-background;
+  @apply bg-slate-50 text-dark-background selection:bg-[#6b2cf5] selection:text-white dark:bg-dark-background dark:text-slate-400 dark:selection:bg-light-green dark:selection:text-dark-background;
 }
 
 h1 {
@@ -377,9 +360,23 @@ svg#freepik_stories-oops-404-error-with-a-broken-robot.animated #freepik--speech
 }
 
 .text-greadient {
-  @apply bg-gradient-to-r from-violet-600 to-r-purple bg-clip-text font-extrabold text-transparent dark:from-dark-green dark:to-light-green;
+  @apply bg-gradient-to-br from-violet-600 via-blue-500 to-cyan-400 bg-clip-text font-extrabold text-transparent dark:from-dark-green dark:to-light-green;
 }
 
 .main-color {
   @apply bg-gradient-to-br from-violet-600 via-blue-500 to-cyan-400;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
 }

@@ -7,7 +7,7 @@ function Skills() {
   const [activeItem, setActiveItem] = useState(0)
 
   return (
-    <animated.section className="relative mx-auto mb-20 flex w-full flex-col py-24 px-8 pt-48 lg:flex-row">
+    <animated.section className="relative mx-auto my-48 mb-20 flex w-full flex-col py-24 px-8 pt-48 lg:flex-row">
       <animated.h3 className="absolute left-0 right-0 top-0 mx-auto bg-gradient-to-r from-[#6b2cf5] to-[#d450e6] bg-clip-text text-center text-transparent dark:from-[#b3eb50] dark:to-light-green">
         Skills
       </animated.h3>
