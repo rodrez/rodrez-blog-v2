@@ -1,8 +1,72 @@
-import Image from '@components/Image'
+import { classNames } from '@utils/general'
+import { useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { animated, useSpring } from 'react-spring'
 import { v4 as uuid } from 'uuid'
 
-import { classNames } from '../../utils/general'
+import GradientBorder from '../GradientBorder'
 import LayerImage from '../Image/LayerImage'
+
+const SingleProject = ({ project, index }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  })
+  const animation = project.animation
+
+  const style = useSpring({ animation })
+
+  return (
+    <animated.div
+      ref={ref}
+      style={inView ? style : { animation: 'none' }}
+      key={index}
+      className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-10/12"
+    >
+      <div
+        className={classNames(
+          index % 2 === 0 ? 'left-4 ' : 'right-4',
+          'absolute top-1/2 z-0 h-80 -translate-y-1/2 overflow-hidden rounded-lg  xl:w-6/12'
+        )}
+      >
+        <LayerImage className={'shadow-md'} src={'https://source.unsplash.com/random/800x600'} />
+      </div>
+      <div
+        className={classNames(
+          index % 2 === 0 ? 'ml-auto text-right' : 'mr-auto',
+          'z-1 relative my-auto w-7/12 max-w-2xl space-y-4'
+        )}
+      >
+        <p className="font-mono text-lg text-blue-500 dark:text-cyan-300">Featured Project</p>
+        <h4>{project.title}</h4>
+        <div
+          className={classNames(
+            index % 2 === 0 ? 'ml-auto' : 'mr-auto',
+            ' max-w-xl rounded-lg bg-white p-8 text-[#000621] shadow-lg shadow-slate-200 dark:bg-dark-background dark:text-slate-400'
+          )}
+        >
+          {project.description}
+        </div>
+        <div
+          className={classNames(
+            index % 2 === 0 ? 'justify-end ' : 'justify-start',
+            'flex gap-x-4 gap-y-2'
+          )}
+        >
+          {project.stack.split(',').map((tech) => (
+            <span className=" font-mono text-slate-700 dark:text-[#94b4be]" key={tech}>
+              {tech}
+            </span>
+          ))}
+        </div>
+        {/* <GradientBorder> */}
+        <button className="mr-auto ml-auto rounded border border-blue-500 py-1 text-xl font-medium text-blue-500 dark:border-cyan-400 dark:text-cyan-300 md:ml-0 md:mr-auto xl:px-12">
+          Learn More
+        </button>
+        {/* </GradientBorder> */}
+      </div>
+    </animated.div>
+  )
+}
 
 export default function Projects() {
   const projects = [
@@ -24,7 +88,11 @@ export default function Projects() {
       ),
       stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
       image: 'next-oms.png',
-      link: 'https://next-oms.netlify.app/',
+      url: 'https://next-oms.netlify.app/',
+      animation: {
+        from: { opacity: 0, transform: 'translateY(20px)' },
+        to: { opacity: 1, transform: 'translateY(0px)' },
+      },
     },
     {
       id: uuid(),
@@ -40,7 +108,11 @@ export default function Projects() {
       ),
       stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
       image: 'dsa.png',
-      link: 'https://dsa.netlify.app/',
+      url: 'https://dsa.netlify.app/',
+      animation: {
+        from: { opacity: 0, transform: 'translateY(-20px)' },
+        to: { opacity: 1, transform: 'translateY(0px)' },
+      },
     },
     {
       id: uuid(),
@@ -54,20 +126,24 @@ export default function Projects() {
 
       stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
       image: 'mythus.png',
-      link: 'https://mythus.netlify.app/',
+      url: 'https://mythus.netlify.app/',
+      animation: {
+        from: { opacity: 0, transform: 'translateY(20px)' },
+        to: { opacity: 1, transform: 'translateY(0px)' },
+      },
     },
-    {
-      id: uuid(),
-      title: 'Aracadefi',
-      description: (
-        <div className="space-y-2">
-          Aracadefi is a web application for tracking and managing games based on crypto currencies.
-        </div>
-      ),
-      stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-      image: 'aracadefi.png',
-      link: 'https://aracadefi.netlify.app/',
-    },
+    // {
+    //   id: uuid(),
+    //   title: 'Aracadefi',
+    //   description: (
+    //     <div className="space-y-2">
+    //       Aracadefi is a web application for tracking and managing games based on crypto currencies.
+    //     </div>
+    //   ),
+    //   stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    //   image: 'aracadefi.png',
+    //   link: 'https://aracadefi.netlify.app/',
+    // },
   ]
 
   return (
@@ -75,51 +151,7 @@ export default function Projects() {
       {/* <Projects /> */}
       <div className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-11/12">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-10/12"
-          >
-            <div
-              className={classNames(
-                index % 2 === 0 ? 'left-4 ' : 'right-4',
-                'absolute top-1/2 z-0 h-80 -translate-y-1/2 overflow-hidden rounded-lg rounded-br-3xl rounded-tl-3xl xl:w-6/12'
-              )}
-            >
-              <LayerImage src={'https://source.unsplash.com/random/800x600'} />
-            </div>
-            <div
-              className={classNames(
-                index % 2 === 0 ? 'ml-auto text-right' : 'mr-auto',
-                'z-1 relative my-auto  w-7/12 max-w-2xl space-y-4'
-              )}
-            >
-              <p className="font-mono text-lg text-cyan-400">Featured Project</p>
-              <h4>{project.title}</h4>
-              <div
-                className={classNames(
-                  index % 2 === 0 ? 'ml-auto' : 'mr-auto',
-                  ' max-w-xl rounded-lg bg-slate-800 p-8'
-                )}
-              >
-                {project.description}
-              </div>
-              <div
-                className={classNames(
-                  index % 2 === 0 ? 'justify-end ' : 'justify-start',
-                  'flex gap-x-4 gap-y-2'
-                )}
-              >
-                {project.stack.split(',').map((tech) => (
-                  <span className=" font-mono text-slate-500" key={tech}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <button className="main-gradient my-6 mr-auto ml-auto rounded px-6 py-1 text-2xl font-bold md:ml-0 md:mr-auto xl:px-12">
-                Read More
-              </button>
-            </div>
-          </div>
+          <SingleProject key={project.id} project={project} index={index} />
         ))}
       </div>
     </div>

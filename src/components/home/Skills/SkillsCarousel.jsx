@@ -1,6 +1,8 @@
+import { wrap } from '@utils/general'
 import React, { useState } from 'react'
-import { animated } from 'react-spring'
 import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
+import { animated } from 'react-spring'
+
 import {
   DjangoIcon,
   JavascriptIcon,
@@ -9,7 +11,6 @@ import {
   ReactJsIcon,
   TypescriptIcon,
 } from './skillsSVGs'
-import { wrap } from '@utils/general'
 
 const SkillIcon = ({ skill }) => {
   return (
@@ -21,7 +22,7 @@ const SkillIcon = ({ skill }) => {
       transition={{ duration: 1 }}
       exit={{ scale: 0 }}
       className={
-        'dark:bg-dark-cover absolute -top-16 left-0 right-0 mx-auto h-32 w-32 overflow-hidden rounded-full bg-slate-200 p-6'
+        'absolute -top-16 left-0 right-0 mx-auto h-32 w-32 overflow-hidden rounded-full bg-slate-200 p-6 dark:bg-dark-cover'
       }
     >
       {skill.icon}
@@ -73,20 +74,16 @@ export default function SkillsCarousel({ skills, setActiveItem }) {
 
   return (
     <>
-      <div className="dark:bg-dark-cover relative w-[80vw] cursor-grab rounded-2xl bg-white shadow-lg shadow-slate-200 dark:shadow-slate-900 lg:mt-0 lg:w-[60vw]">
+      <div className="relative w-[80vw] cursor-grab rounded-2xl bg-white shadow-lg shadow-slate-200 dark:bg-dark-background dark:shadow-slate-900 lg:mt-0 lg:w-[60vw]">
         <div
           className={
-            'dark:bg-dark-cover absolute -top-16 left-0 right-0 mx-auto h-32 w-32 overflow-hidden rounded-full bg-white p-6 shadow-xl'
+            'absolute -top-16 left-0 right-0 mx-auto h-32 w-32 overflow-hidden rounded-full bg-white p-6 shadow-xl dark:bg-dark-background'
           }
         >
           <animated.div>{getIcon(skills[skillsIndex])}</animated.div>
         </div>
-        <animated.div className={'mt-12 p-8 lg:mt-0 lg:p-20'}>
-          <h3
-            className={
-              'dark:to-light-green mb-8 bg-gradient-to-r from-[#6b2cf5] to-[#d450e6] bg-clip-text text-center text-4xl text-transparent dark:from-[#b3eb50] lg:text-5xl'
-            }
-          >
+        <animated.div className={' lg:mt-0 lg:p-20'}>
+          <h3 className={'gradient-text h-16 text-center text-4xl lg:text-5xl'}>
             {skills[skillsIndex].title}
           </h3>
           <p className={'text-center text-2xl'}>{skills[skillsIndex].description}</p>
@@ -94,18 +91,18 @@ export default function SkillsCarousel({ skills, setActiveItem }) {
         <animated.div
           onClick={() => paginate(1)}
           className={
-            'dark:to-light-green absolute -left-7 top-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full bg-gradient-to-r from-[#6b2cf5] to-[#d450e6] dark:from-[#b3eb50] lg:top-0 lg:bottom-0'
+            'main-color absolute -left-7 top-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full lg:top-0 lg:bottom-0'
           }
         >
-          <TiChevronLeft className={'dark:text-dark-background h-full w-full text-white'} />
+          <TiChevronLeft className={'h-full w-full text-white'} />
         </animated.div>
         <animated.div
           onClick={() => paginate(-1)}
           className={
-            'dark:to-light-green absolute -right-7 bottom-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full bg-gradient-to-r from-[#6b2cf5] to-[#d450e6] dark:from-[#b3eb50] lg:top-0 lg:bottom-0'
+            'main-color absolute -right-7 bottom-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full lg:top-0 lg:bottom-0'
           }
         >
-          <TiChevronRight className={'dark:text-dark-background h-full w-full text-white'} />
+          <TiChevronRight className={'h-full w-full text-white'} />
         </animated.div>
       </div>
     </>

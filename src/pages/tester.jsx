@@ -10,6 +10,7 @@ import { loadFull } from 'tsparticles'
 
 import Newsletter from '../components/home/Newsletter'
 import Projects from '../components/home/Projects'
+import Skills from '../components/home/Skills'
 import Navigator from '../components/navigator'
 import ProgrammingImage from '../components/svg/ProgrammingImage'
 
@@ -49,7 +50,7 @@ export default function Tester() {
           options={particlesConfig(resolvedTheme === 'light' ? '#D6F6FC' : '#2F3244')}
         />
       </div>
-      <Parallax className="no-scrollbar" ref={parallax} pages={3}>
+      <Parallax className="no-scrollbar" ref={parallax} pages={4}>
         <ParallaxLayer
           className="rounded-lg "
           offset={1}
@@ -63,15 +64,30 @@ export default function Tester() {
           }}
           onClick={() => parallax.current.scrollTo(2)}
         >
+          <Skills />
+        </ParallaxLayer>
+        <ParallaxLayer
+          className="rounded-lg "
+          offset={2}
+          speed={0.5}
+          style={{
+            // backgroundColor: resolvedTheme === 'dark' ? '#000621' : '#D6F6FC',
+            width: '65%',
+            height: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+          onClick={() => parallax.current.scrollTo(3)}
+        >
           <Projects />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={2}
+          offset={3}
           speed={1}
           style={{ backgroundColor: resolvedTheme === 'dark' ? '#032127' : '#87BCDE' }}
         />
 
-        <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={2.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
           <Image
             size="100"
             src={url('satellite4')}
@@ -81,7 +97,7 @@ export default function Tester() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2.5}
+          offset={3.5}
           speed={-0.4}
           style={{
             display: 'flex',
@@ -94,7 +110,7 @@ export default function Tester() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2}
+          offset={2.75}
           speed={-0.3}
           style={{
             backgroundSize: '80%',
@@ -145,7 +161,7 @@ export default function Tester() {
           </div>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={2}
+          offset={2.75}
           speed={-0}
           style={{
             display: 'flex',

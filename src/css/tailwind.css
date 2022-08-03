@@ -68,7 +68,7 @@ input:-webkit-autofill:focus {
 }
 
 body {
-  @apply bg-slate-50 text-dark-background selection:bg-[#6b2cf5] selection:text-white dark:bg-dark-background dark:text-slate-400 dark:selection:bg-light-green dark:selection:text-dark-background;
+  @apply bg-slate-50 selection:bg-cyan-300 selection:text-[#000621] dark:bg-[#000621] dark:text-slate-400 dark:selection:bg-light-green dark:selection:text-dark-background;
 }
 
 h1 {

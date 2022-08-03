@@ -2,7 +2,7 @@ import HomeIntro from '@components/home/Intro'
 import Newsletter from '@components/home/Newsletter'
 import Projects from '@components/home/Projects'
 import Skills from '@components/home/Skills'
-import HeroImage from '@components/svg/HeroImage'
+import ProgrammingImage from '@components/svg/ProgrammingImage'
 import { useTheme } from 'next-themes'
 import React from 'react'
 
@@ -16,7 +16,10 @@ const About = () => {
           <HomeIntro />
           {/* TODO: Adjust bg image */}
           <div className={'relative z-10 order-1 h-0 pb-[56.25%] lg:order-2'}>
-            <HeroImage className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'} />
+            <ProgrammingImage
+              className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'}
+            />
+            {/* <HeroImage className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'} /> */}
           </div>
         </div>
 

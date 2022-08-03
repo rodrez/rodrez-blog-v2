@@ -7,7 +7,7 @@ const LayerImage = ({ size, ...rest }) => {
   const [isHovered, setIsHovered] = useState(false)
   // change the opacity of the image when hovered
   const { opacity } = useSpring({
-    opacity: isHovered ? 1 : 0.5,
+    opacity: isHovered ? 1 : 0.6,
     config: { mass: 1, tension: 200, friction: 20 },
   })
 
@@ -15,7 +15,7 @@ const LayerImage = ({ size, ...rest }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="main-color h-full w-full"
+      className="h-full w-full bg-blue-500 dark:bg-cyan-400"
     >
       <animated.div style={{ opacity }}>
         <NextImage {...rest} height={size} width={size} alt="test" layout="fill" />

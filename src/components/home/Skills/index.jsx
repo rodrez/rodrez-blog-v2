@@ -8,7 +8,7 @@ function Skills() {
 
   return (
     <animated.section className="relative mx-auto my-48 mb-20 flex w-full flex-col py-24 px-8 pt-48 lg:flex-row">
-      <animated.h3 className="absolute left-0 right-0 top-0 mx-auto bg-gradient-to-r from-[#6b2cf5] to-[#d450e6] bg-clip-text text-center text-transparent dark:from-[#b3eb50] dark:to-light-green">
+      <animated.h3 className="gradient-text absolute left-0 right-0 top-0 mx-auto text-center">
         Skills
       </animated.h3>
       <animated.div className="relative w-52">
