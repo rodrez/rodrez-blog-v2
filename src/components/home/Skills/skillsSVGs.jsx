@@ -16,7 +16,7 @@ const draw = {
   },
 }
 
-export const ReactIcon = () => (
+const ReactIcon = () => (
   <animated.svg initial={'hidden'} animate={'visible'} variants={draw} viewBox="0 0 128 128">
     <g fill="#61DAFB">
       <animated.circle
@@ -39,8 +39,8 @@ export const ReactIcon = () => (
   </animated.svg>
 )
 
-export const PythonIcon = () => (
-  <animated.svg className={'mt-2'} layout viewBox="0 0 128 128">
+const PythonIcon = () => (
+  <animated.svg className={'mt-2'} viewBox="0 0 128 128">
     <linearGradient
       id="python-original-a"
       gradientUnits="userSpaceOnUse"
@@ -127,7 +127,7 @@ export const PythonIcon = () => (
   </animated.svg>
 )
 
-export const JavascriptIcon = () => (
+const JavascriptIcon = () => (
   <svg viewBox="0 0 128 128">
     <animated.path
       initial={{ scale: 0 }}
@@ -163,7 +163,7 @@ export const JavascriptIcon = () => (
   </svg>
 )
 
-export const TypescriptIcon = () => (
+const TypescriptIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 400 400">
     {/* <style>.st0{fill:#007acc}.st1{fill:#fff}</style> */}
     <animated.path
@@ -202,7 +202,7 @@ export const TypescriptIcon = () => (
   </svg>
 )
 
-export const DjangoIcon = () => (
+const DjangoIcon = () => (
   <svg viewBox="0 0 128 128">
     <path
       fill="#003A2B"
@@ -241,7 +241,7 @@ const graphVariant = {
   }),
 }
 
-export const GraphQLIcon = () => (
+const GraphQLIcon = () => (
   <svg viewBox="0 0 128 128">
     <g fill="#E434AA">
       <animated.path
@@ -288,7 +288,7 @@ export const GraphQLIcon = () => (
   </svg>
 )
 
-export const TailwindIcon = () => (
+const TailwindIcon = () => (
   <svg viewBox="0 0 128 128">
     <path
       d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
@@ -297,7 +297,7 @@ export const TailwindIcon = () => (
   </svg>
 )
 
-export const NextJSIcon = () => (
+const NextJSIcon = () => (
   <svg className="" viewBox="0 0 128 128">
     <animated.path
       initial={{ pathLength: 0, opacity: 0 }}
@@ -312,7 +312,7 @@ export const NextJSIcon = () => (
   </svg>
 )
 
-export const ReactJsIcon = ({ className }) => {
+const ReactJsIcon = ({ className }) => {
   return (
     <animated.svg
       className={className + ' stroke-white'}
@@ -394,4 +394,14 @@ export const ReactJsIcon = ({ className }) => {
       </g>
     </animated.svg>
   )
+}
+
+export {
+  DjangoIcon,
+  JavascriptIcon,
+  NextJSIcon,
+  PythonIcon,
+  ReactJsIcon,
+  TailwindIcon,
+  TypescriptIcon,
 }

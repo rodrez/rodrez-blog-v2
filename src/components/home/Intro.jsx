@@ -10,10 +10,9 @@ const Title = () => (
 
 const AboutMe = () => (
   <animated.h6 className={'mt-6 text-center md:text-left'}>
-    Welcome to my blog. In this blog I share all my thoughts and experiences, while I&apos;m
-    learning new things as a <span className="gradient-text "> Software Engineer </span> /
-    <span className="gradient-text"> Full Stack Developer </span>. My current focus is Python, and
-    Web Development.
+    Welcome! In this blog we will cover, informative and insightful posts about software and
+    programming, while I&apos;m learning new things as a{' '}
+    <span className="gradient-text "> Software Engineer </span> /
   </animated.h6>
 )
 
@@ -60,7 +59,7 @@ export default function Intro() {
   })
 
   return (
-    <animated.div className={'order-2 w-full lg:order-1'}>
+    <animated.div className={'z-10 order-2 w-full lg:order-1'}>
       {transitions((style, item) => (
         <animated.div key={item} style={style}>
           <item.component />

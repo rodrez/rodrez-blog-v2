@@ -1,24 +1,12 @@
 import { classNames } from '@utils/general'
-import { useRef } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { animated, useSpring } from 'react-spring'
 import { v4 as uuid } from 'uuid'
 
-import GradientBorder from '../GradientBorder'
+import SlideIn from '../animations/SlideIn'
 import LayerImage from '../Image/LayerImage'
 
 const SingleProject = ({ project, index }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  })
-  const animation = project.animation
-
-  const style = useSpring({ animation })
-
   return (
-    <animated.div
-      ref={ref}
-      style={inView ? style : { animation: 'none' }}
+    <div
       key={index}
       className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-10/12"
     >
@@ -28,7 +16,7 @@ const SingleProject = ({ project, index }) => {
           'absolute top-1/2 z-0 h-80 -translate-y-1/2 overflow-hidden rounded-lg  xl:w-6/12'
         )}
       >
-        <LayerImage className={'shadow-md'} src={'https://source.unsplash.com/random/800x600'} />
+        <LayerImage className={'shadow-md'} src={project.image} />
       </div>
       <div
         className={classNames(
@@ -41,7 +29,7 @@ const SingleProject = ({ project, index }) => {
         <div
           className={classNames(
             index % 2 === 0 ? 'ml-auto' : 'mr-auto',
-            ' max-w-xl rounded-lg bg-white p-8 text-[#000621] shadow-lg shadow-slate-200 dark:bg-dark-background dark:text-slate-400'
+            ' max-w-xl rounded-lg bg-white p-8 text-[#000621] shadow-lg shadow-slate-200 dark:bg-dark-background dark:text-slate-400 dark:shadow-slate-900'
           )}
         >
           {project.description}
@@ -64,7 +52,7 @@ const SingleProject = ({ project, index }) => {
         </button>
         {/* </GradientBorder> */}
       </div>
-    </animated.div>
+    </div>
   )
 }
 
@@ -78,7 +66,7 @@ export default function Projects() {
           <p>
             OMS is a centralized web-based system that helps tracking progress and completion of
             training, audits and documentation. OMS also enables visibility when an employee needs
-            to be retrained or requalified.
+            to be retrained or re-qualified.
           </p>
           <p>
             Additional features includes but are not limited to reports, dashboards, data exports,
@@ -86,13 +74,9 @@ export default function Projects() {
           </p>
         </div>
       ),
-      stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-      image: 'next-oms.png',
+      stack: 'React, Redux, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      image: '/static/images/projects/next-oms.png',
       url: 'https://next-oms.netlify.app/',
-      animation: {
-        from: { opacity: 0, transform: 'translateY(20px)' },
-        to: { opacity: 1, transform: 'translateY(0px)' },
-      },
     },
     {
       id: uuid(),
@@ -106,13 +90,9 @@ export default function Projects() {
           <p>We cover a variety of Blind 75 questions and LeetCode problems.</p>
         </div>
       ),
-      stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-      image: 'dsa.png',
+      stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      image: '/static/images/projects/mythus.png',
       url: 'https://dsa.netlify.app/',
-      animation: {
-        from: { opacity: 0, transform: 'translateY(-20px)' },
-        to: { opacity: 1, transform: 'translateY(0px)' },
-      },
     },
     {
       id: uuid(),
@@ -124,13 +104,9 @@ export default function Projects() {
         </div>
       ),
 
-      stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-      image: 'mythus.png',
+      stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      image: '/static/images/projects/mythus.png',
       url: 'https://mythus.netlify.app/',
-      animation: {
-        from: { opacity: 0, transform: 'translateY(20px)' },
-        to: { opacity: 1, transform: 'translateY(0px)' },
-      },
     },
     // {
     //   id: uuid(),
@@ -140,7 +116,7 @@ export default function Projects() {
     //       Aracadefi is a web application for tracking and managing games based on crypto currencies.
     //     </div>
     //   ),
-    //   stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    //   stack: 'React, Redux, Node, Express, MongoDB, MUI, Jest, Enzyme',
     //   image: 'aracadefi.png',
     //   link: 'https://aracadefi.netlify.app/',
     // },
@@ -151,7 +127,9 @@ export default function Projects() {
       {/* <Projects /> */}
       <div className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-11/12">
         {projects.map((project, index) => (
-          <SingleProject key={project.id} project={project} index={index} />
+          <SlideIn key={project.id} reverse={index % 2 === 0}>
+            <SingleProject project={project} index={index} />
+          </SlideIn>
         ))}
       </div>
     </div>

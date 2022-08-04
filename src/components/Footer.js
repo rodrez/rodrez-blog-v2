@@ -6,7 +6,7 @@ import Link from './Link'
 export default function Footer() {
   return (
     <footer>
-      <div className="sticky bottom-4 mt-24 flex flex-col items-center">
+      <div className="fixed bottom-2 left-1/2 flex -translate-x-1/2 flex-col items-center">
         <div className="mb-3 flex space-x-4">
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
           <SocialIcon kind="github" href={siteMetadata.github} size="6" />

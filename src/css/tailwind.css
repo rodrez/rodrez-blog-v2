@@ -68,7 +68,7 @@ input:-webkit-autofill:focus {
 }
 
 body {
-  @apply bg-slate-50 selection:bg-cyan-300 selection:text-[#000621] dark:bg-[#000621] dark:text-slate-400 dark:selection:bg-light-green dark:selection:text-dark-background;
+  @apply bg-slate-50 selection:bg-cyan-300 selection:text-[#000621] dark:bg-[#000621] dark:text-slate-400 dark:selection:text-dark-background;
 }
 
 h1 {
@@ -379,4 +379,16 @@ svg#freepik_stories-oops-404-error-with-a-broken-robot.animated #freepik--speech
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-slate-700;
 }

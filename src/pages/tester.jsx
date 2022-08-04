@@ -8,6 +8,7 @@ import React, { useCallback, useRef } from 'react'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 
+import Browser from '../components/browser'
 import Newsletter from '../components/home/Newsletter'
 import Projects from '../components/home/Projects'
 import Skills from '../components/home/Skills'
@@ -50,7 +51,7 @@ export default function Tester() {
           options={particlesConfig(resolvedTheme === 'light' ? '#D6F6FC' : '#2F3244')}
         />
       </div>
-      <Parallax className="no-scrollbar" ref={parallax} pages={4}>
+      <Parallax className="no-scrollbar" ref={parallax} pages={3.75}>
         <ParallaxLayer
           className="rounded-lg "
           offset={1}
@@ -81,11 +82,11 @@ export default function Tester() {
         >
           <Projects />
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={3}
           speed={1}
           style={{ backgroundColor: resolvedTheme === 'dark' ? '#032127' : '#87BCDE' }}
-        />
+        /> */}
 
         <ParallaxLayer offset={2.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
           <Image
@@ -97,28 +98,30 @@ export default function Tester() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={3.5}
-          speed={-0.4}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            pointerEvents: 'none',
-          }}
-        >
-          <Image size="100" src={url('earth')} alt="Image1" style={{ width: '60%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer
           offset={2.75}
           speed={-0.3}
           style={{
-            backgroundSize: '80%',
-            marginTop: '10%',
-            backgroundPosition: 'center',
-            backgroundImage: url('clients', true),
+            display: 'flex',
+            alignItems: 'center',
+            marginTop: '-5%',
+            justifyContent: 'end',
+            paddingRight: '85%',
           }}
-        />
+        >
+          <Browser />
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={2.75}
+          speed={0.4}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'end',
+            paddingRight: '10%',
+          }}
+        >
+          <Browser />
+        </ParallaxLayer>
         {/* Home Intro */}
         <ParallaxLayer
           offset={0}

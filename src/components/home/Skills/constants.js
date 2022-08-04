@@ -1,39 +1,46 @@
-import * as icons from './skillsSVGs'
+import {
+  DjangoIcon,
+  JavascriptIcon,
+  NextJSIcon,
+  PythonIcon,
+  ReactJsIcon,
+  TailwindIcon,
+  TypescriptIcon,
+} from './skillsSVGs'
 
-export const skills = [
-  {
-    title: 'React',
-    icon: <icons.ReactIcon />,
+export const skills = {
+  React: {
+    icon: ReactJsIcon,
     description:
       'Proficient in React. Knowledgeable of hooks, components, and state management. Built multiple projects with React.',
   },
-  {
-    title: 'JavaScript',
-    icon: <icons.JavascriptIcon />,
+  JavaScript: {
+    icon: JavascriptIcon,
     description: 'Proficient in JavaScript. Knowledgeable of ES6. 2+ years of experience JS.',
   },
-  {
-    title: 'Python',
-    icon: <icons.PythonIcon />,
+  Python: {
+    icon: PythonIcon,
     description:
       'Proficient in Python. 3+ years of experience with Python. Familiar with Pandas, NumPy, and SciPy.',
   },
-  {
-    title: 'Django',
-    icon: <icons.DjangoIcon />,
+  Django: {
+    icon: DjangoIcon,
     description:
       'Proficient in Django and Django Rest Framework. Familiar with the MVC architecture. Built multiple backends with Django.',
   },
-  {
-    title: 'TypeScript',
-    icon: <icons.TypescriptIcon />,
+  TypeScript: {
+    icon: TypescriptIcon,
     description:
       'Familiar with TypeScript. Just started using it. Currently learning how to use it.',
   },
-  {
-    title: 'NextJS',
-    icon: <icons.NextJSIcon />,
+  NextJS: {
+    icon: NextJSIcon,
     description:
       'Proficient in NextJS. Knowledgeable of SSR, CSR, and SSG. 2+ years of experience with NextJS. Built multiple projects with NextJS.',
   },
-]
+  Tailwind: {
+    icon: TailwindIcon,
+    description:
+      'Proficient with TailwindCSS. Currently learning how to use it. Built multiple projects with TailwindCSS.',
+  },
+}

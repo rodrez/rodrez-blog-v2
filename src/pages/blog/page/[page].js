@@ -1,7 +1,8 @@
 import { PageSEO } from '@components/SEO'
 import siteMetadata from '@data/siteMetadata'
-import { getAllFilesFrontMatter } from '@libs/mdx'
 import ListLayout from '@layouts/ListLayout'
+import { getAllFilesFrontMatter } from '@libs/mdx'
+
 import { POSTS_PER_PAGE } from '../../blog'
 
 export async function getStaticPaths() {

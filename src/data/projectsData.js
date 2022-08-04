@@ -16,7 +16,7 @@ const projectsData = [
       </div>
     ),
     stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-    imgSrc: 'next-oms.png',
+    imgSrc: '/static/images/projects/next-oms.png',
     href: '',
   },
   {
@@ -32,8 +32,8 @@ const projectsData = [
       </div>
     ),
     stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-    imageSrc: 'dsa.png',
-    href: 'https://dsa.netlify.app/',
+    imageSrc: '/static/images/projects/mythus.png',
+    href: '/static/images/projects/',
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const projectsData = [
       </div>
     ),
     stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
-    image: 'mythus.png',
+    image: '/static/images/projects/mythus.png',
     link: 'https://mythus.netlify.app/',
   },
   {
