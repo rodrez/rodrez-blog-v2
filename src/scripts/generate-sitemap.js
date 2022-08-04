@@ -12,10 +12,12 @@ const siteMetadata = require('../data/siteMetadata')
     'src/data/blog/**/*.mdx',
     'src/data/blog/**/*.md',
     'public/tags/**/*.xml',
-    '!src/pages/_*.js',
-    '!src/pages/_*.tsx',
-    '!src/pages/api',
+    '!pages/_*.js',
+    '!pages/_*.tsx',
+    '!pages/api',
   ])
+
+  console.log(pages)
 
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
@@ -34,8 +36,8 @@ const siteMetadata = require('../data/siteMetadata')
                   }
                 }
                 const path = page
-                  .replace('pages/', '/')
-                  .replace('data/blog', '/blog')
+                  .replace('src/pages/', '/')
+                  .replace('src/data/blog', '/blog')
                   .replace('public/', '/')
                   .replace('.js', '')
                   .replace('.tsx', '')
