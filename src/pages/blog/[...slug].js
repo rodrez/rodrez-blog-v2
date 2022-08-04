@@ -1,8 +1,8 @@
-import fs from 'fs'
+import { MDXLayoutRenderer } from '@components/MDXComponents'
 import PageTitle from '@components/PageTitle'
 import generateRss from '@libs/generate-rss'
-import { MDXLayoutRenderer } from '@components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@libs/mdx'
+import fs from 'fs'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 

@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react'
-
 import siteMetadata from '@data/siteMetadata'
+import { useRef, useState } from 'react'
 
 const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
   const inputEl = useRef(null)

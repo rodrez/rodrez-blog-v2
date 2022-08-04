@@ -39,7 +39,7 @@ export default function Features() {
               }}
               className="bg-dark-bg-secondary grid h-72 w-full grid-cols-1 rounded-2xl p-6"
             >
-              <div className="even:bg-secondary my-3 h-3 w-16 rounded-lg odd:bg-primary" />
+              <div className="even:bg-secondary odd:bg-primary my-3 h-3 w-16 rounded-lg" />
               <h5 className="text-3xl font-bold">{feature.title}</h5>
               <p className="">{feature.summary}</p>
             </div>

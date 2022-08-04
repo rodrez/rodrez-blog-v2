@@ -35,7 +35,7 @@ function HeroHome() {
               data-aos="zoom-y-out"
             >
               Welcome! I&apos;m
-              <span className="from-light-green to-dark-blue bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-light-green to-dark-blue bg-clip-text text-transparent">
                 {' '}
                 Fabian{' '}
               </span>
