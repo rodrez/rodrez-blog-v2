@@ -4,7 +4,7 @@ export default function Browser() {
       <div className="absolute top-0 left-0 h-8 w-full rounded-t-md bg-slate-800">
         <div className="flex h-full space-x-2 p-2">
           <div className="h-4 w-4 rounded-full bg-red-400"></div>
-          <div className="h-4 w-4 rounded-full bg-amber-400"></div>
+          <div className="h-4 w-4 rounded-full bg-primary-400"></div>
           <div className="h-4 w-4 rounded-full bg-green-400"></div>
         </div>
       </div>

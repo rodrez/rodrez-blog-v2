@@ -9,14 +9,7 @@ draft: false
 layout: PostSimple
 ---
 
-<!-- title: Sample .md file
-date: '2016-03-08'
-tags: ['markdown', 'code', 'features']
-draft: false
-summary: Example of a markdown file with code blocks and syntax highlighting
---- -->
-
-## The prompt
+# The prompt
 
 Given an integer array nums, return true if any value appears at least twice in the array,
 and return false if every element is distinct.
@@ -32,29 +25,24 @@ and return false if every element is distinct.
   ]}
 />
 
-### Constraints
+## Constraints
 
 1 `<=` nums.length `<=` 105
 
 -109 `<=` nums[i] `<=` 109
 
-### Solution #1: (Worst)
+## Solution #1: (Worst)
 
-<CodeSnippet
-  code={`def naive_solution(nums: List[int]) -> bool:
-    # Loops trough the list 
+```python:naive.py
+def naive_solution(nums: List[int]) -> bool:
+    # Loops trough the list
     for i in nums:
         # Loops through the list but starts at the \`i\` element of nums
         for j in nums[i:]:
             if i == j:
                 return True
-    return False`}
-  language="python"
-  showLineNumbers
-  lineFocus={[]}
-  addedLines={[]}
-  removedLines={[]}
-/>
+    return False
+```
 
 <span className="text-xl font-bold">How does it work?</span>
 
@@ -82,21 +70,16 @@ Let's assume we have `nums = [1,2,3,1]`
   children={'O(n²)'}
 />
 
-### Solution #2: (Not So Worst)
+## Solution #2: (Not So Bad)
 
-<CodeSnippet
-  code={`def sorted_solution(nums: List[int]) -> bool:
+```python:sorted_solution.py
+def sorted_solution(nums: List[int]) -> bool:
     sorted_array = sorted(nums)
     for n in range(len(sorted_array)):
         if n < len(sorted_array)-1 and sorted_array[n] == sorted_array[n+1]:
             return True
     return False`}
-  language="python"
-  showLineNumbers
-  lineFocus={[]}
-  addedLines={[]}
-  removedLines={[]}
-/>
+```
 
 <span className="text-xl font-bold">How does it work?</span>
 
@@ -125,25 +108,19 @@ Let's assume we have `nums = [1,2,3,1]`
 <HoverMe meaning={'New variable was assiged. Thus it affects memory used.'} children={'O(1)'} />
 <HoverMe meaning={'Logarithmic Time. '} children={'O(n²)'} />
 
-### Solution #3: (Good)
+## Solution #3: (Good)
 
-<CodeSnippet
-  code={`def set_solution(nums:List[int]) -> bool:
+```python:good_solution.py
+def set_solution(nums:List[int]) -> bool:
     hash_set = set()
     for n in nums:
-        if n in hash_set: 
+        if n in hash_set:
             return True
         # Else can be ignored but it's added for explicitness (easier to read imo)
         else:
             hash_set.add(n)
     return False
-`}
-  language="python"
-  showLineNumbers
-  lineFocus={[]}
-  addedLines={[]}
-  removedLines={[]}
-/>
+```
 
 <span className="text-xl font-bold">How does it work?</span>
 
@@ -170,17 +147,12 @@ Let's assume we have `nums = [1,2,3,1]`
   children={'O(n)'}
 />
 
-### Solution #4: (Clever Pythonista)
+## Solution #4: (Clever Pythonista)
 
-<CodeSnippet
-  code={`def clever_solution(nums: List[int]) -> bool:
+```python:clever_pythonista.py
+def clever_solution(nums: List[int]) -> bool:
     return len(set(nums)) != len(nums)`}
-  language="python"
-  showLineNumbers
-  lineFocus={[]}
-  addedLines={[]}
-  removedLines={[]}
-/>
+```
 
 <span className="text-xl font-bold">How does it work?</span>
 

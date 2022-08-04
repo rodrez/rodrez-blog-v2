@@ -55,12 +55,10 @@ export default function Newsletter() {
     <FadeBottomUp>
       <div className="z-10 mb-12 mt-72">
         <div className="mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div className="main-color rounded-3xl py-10 px-6 sm:py-16 sm:px-12 lg:flex lg:items-center lg:p-20">
-            <div className=" lg:flex-1">
-              <h2 className="text-3xl font-extrabold tracking-tight text-white">
-                Sign up for our newsletter
-              </h2>
-              <p className="mt-4 max-w-3xl text-lg text-indigo-100">
+          <div className="rounded-3xl bg-primary-600 py-10 px-6 dark:bg-primary-400 sm:py-16 sm:px-12 lg:flex lg:items-center lg:p-20">
+            <div className=" dark:text-[#000621] lg:flex-1">
+              <h2 className="text-3xl font-extrabold tracking-tight">Sign up for our newsletter</h2>
+              <p className="mt-4 max-w-3xl text-lg">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat
                 commodo. Elit sunt amet fugiat.
               </p>
@@ -78,14 +76,14 @@ export default function Newsletter() {
                   value={email}
                   autoComplete="email"
                   required
-                  className="w-full rounded-md px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-cyan-700 dark:bg-[#000621]"
+                  className="w-full rounded-md px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-amber-400 dark:bg-[#000621]"
                   placeholder="Enter your email"
                 />
 
                 <button
                   onClick={addEmail}
                   type="submit"
-                  className="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-cyan-500 px-5 py-3 text-base font-medium text-white hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  className="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-[#0668D9] px-5 py-3 text-base font-medium text-white hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
                 >
                   Notify me
                 </button>

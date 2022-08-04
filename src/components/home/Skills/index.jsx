@@ -12,7 +12,7 @@ function Skills() {
 
   const skillsBubbles = {
     Python: {
-      class: (number) => `top-24 left-0 lg:top-40 lg:left-6  h-${number} w-${number}`,
+      class: (number) => `top-8 left-0 lg:top-40 lg:left-6  h-${number} w-${number}`,
     },
     JavaScript: {
       class: (number) => `top-40 right-4 lg:top-12 lg:right-16 h-${number} w-${number}`,
@@ -24,7 +24,7 @@ function Skills() {
       class: (number) => `bottom-4 right-40 h-${number} w-${number}`,
     },
     Django: {
-      class: (number) => `top-20 left-72 h-${number} w-${number}`,
+      class: (number) => `top-20 left-52 h-${number} w-${number}`,
     },
     NextJS: {
       class: (number) => `bottom-24 left-52 lg:bottom-12 lg:left-20 h-${number} w-${number}`,
@@ -35,8 +35,10 @@ function Skills() {
   }
 
   return (
-    <animated.section className="relative mx-auto my-48 mb-20 flex w-full flex-col items-center justify-center py-24 pt-48">
-      <animated.h3 className="gradient-text mx-auto mt-6 mb-6 text-center">Skills</animated.h3>
+    <animated.section className="relative z-10 mx-auto my-48 mb-20 flex w-full flex-col items-center justify-center py-24 pt-48">
+      <animated.h3 className="mx-auto mt-6 mb-6 text-center text-primary-600 dark:text-primary-400">
+        Skills
+      </animated.h3>
       {/* Skill Bubbles */}
       <div className="absolute h-full w-full">
         {Object.keys(skills).map((skill, index) => {
@@ -47,7 +49,7 @@ function Skills() {
               duration={2000}
               className={classNames(
                 skillsBubbles[skill].class(20),
-                'absolute flex items-center justify-center rounded-full bg-white p-1 p-3 shadow-lg shadow-slate-200 dark:bg-dark-background dark:shadow-slate-900'
+                'absolute flex items-center justify-center rounded-full bg-white p-3 shadow-lg shadow-slate-200 dark:bg-dark-background dark:shadow-slate-900'
               )}
               key={index}
             >

@@ -36,6 +36,7 @@
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.4.0",
     "react-particles": "^2.1.4",
+    "react-responsive": "^9.0.0-beta.10",
     "react-spring": "^9.5.2",
     "react-spring-carousel": "^2.0.19",
     "react-tsparticles": "^2.1.4",

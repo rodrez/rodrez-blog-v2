@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Pre = (props) => {
   const textInput = useRef(null)
@@ -63,7 +63,7 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre>{props.children}</pre>
+      <pre className="text-lg">{props.children}</pre>
     </div>
   )
 }

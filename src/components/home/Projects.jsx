@@ -10,25 +10,30 @@ const SingleProject = ({ project, index }) => {
       key={index}
       className=" relative my-12 mx-auto flex flex-col break-words rounded-2xl bg-clip-border xl:w-10/12"
     >
+      {/* Layered Image */}
       <div
         className={classNames(
           index % 2 === 0 ? 'left-4 ' : 'right-4',
-          'absolute top-1/2 z-0 h-80 -translate-y-1/2 overflow-hidden rounded-lg  xl:w-6/12'
+          'absolute top-1/2 z-0 hidden h-80 -translate-y-1/2 overflow-hidden rounded-lg lg:block  xl:w-6/12'
         )}
       >
         <LayerImage className={'shadow-md'} src={project.image} />
       </div>
+      {/* Layered Image Ends */}
+      {/* Project Information */}
       <div
         className={classNames(
-          index % 2 === 0 ? 'ml-auto text-right' : 'mr-auto',
-          'z-1 relative my-auto w-7/12 max-w-2xl space-y-4'
+          index % 2 === 0 ? 'lg:ml-auto lg:text-right' : 'lg:mr-auto',
+          'z-1 relative my-auto max-w-2xl space-y-4 lg:w-7/12'
         )}
       >
-        <p className="font-mono text-lg text-blue-500 dark:text-cyan-300">Featured Project</p>
+        <p className="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">
+          Featured Project
+        </p>
         <h4>{project.title}</h4>
         <div
           className={classNames(
-            index % 2 === 0 ? 'ml-auto' : 'mr-auto',
+            index % 2 === 0 ? 'lg:ml-auto' : 'lg:mr-auto',
             ' max-w-xl rounded-lg bg-white p-8 text-[#000621] shadow-lg shadow-slate-200 dark:bg-dark-background dark:text-slate-400 dark:shadow-slate-900'
           )}
         >
@@ -36,8 +41,8 @@ const SingleProject = ({ project, index }) => {
         </div>
         <div
           className={classNames(
-            index % 2 === 0 ? 'justify-end ' : 'justify-start',
-            'flex gap-x-4 gap-y-2'
+            index % 2 === 0 ? 'lg:justify-end ' : 'lg:justify-start',
+            'flex flex-wrap gap-x-4 gap-y-2'
           )}
         >
           {project.stack.split(',').map((tech) => (
@@ -47,11 +52,12 @@ const SingleProject = ({ project, index }) => {
           ))}
         </div>
         {/* <GradientBorder> */}
-        <button className="mr-auto ml-auto rounded border border-blue-500 py-1 text-xl font-medium text-blue-500 dark:border-cyan-400 dark:text-cyan-300 md:ml-0 md:mr-auto xl:px-12">
+        <button className="rounded border-2 border-primary-600 py-1 px-2 text-xl font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400 md:ml-0 md:mr-auto lg:mr-auto lg:ml-auto xl:px-12">
           Learn More
         </button>
         {/* </GradientBorder> */}
       </div>
+      {/* Project Information Ends */}
     </div>
   )
 }

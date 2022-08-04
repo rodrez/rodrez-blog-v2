@@ -7,6 +7,9 @@ import { classNames } from '@utils/general'
 import { useState } from 'react'
 import { animated, useSpring, useTransition } from 'react-spring'
 
+import AnimatedBorder from '../components/animations/AnimatedBorder'
+import TrailingArrows from '../components/animations/TrailingArrows'
+
 const BlogCard = ({ post }) => {
   const [isHovered, setIsHovered] = useState(false)
   const { slug, date, title, summary, tags } = post
@@ -21,8 +24,11 @@ const BlogCard = ({ post }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       key={slug}
-      className=" h-full w-[20vw] rounded-md border-2 border-transparent bg-slate-200 p-6 hover:border-2 hover:border-blue-500 dark:bg-dark-background dark:hover:border-cyan-400"
+      className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
     >
+      {/* Border Animations */}
+      <AnimatedBorder toggle={isHovered} />
+
       <article className="flex flex-col space-y-2 xl:items-baseline xl:space-y-0">
         <dl>
           <dt className="sr-only">Published on</dt>
@@ -34,15 +40,15 @@ const BlogCard = ({ post }) => {
           <div>
             <h3
               className={classNames(
-                'text-2xl font-bold leading-8 tracking-tight',
-                isHovered && 'text-blue-500 dark:text-cyan-400'
+                'relative z-10 text-2xl font-bold leading-8 tracking-tight',
+                isHovered && 'text-amber-600 dark:text-amber-400 '
               )}
             >
               <Link href={`/blog/${slug}`} className="">
                 {title}
               </Link>
             </h3>
-            <div className="flex flex-wrap">
+            <div className="relative z-10 flex flex-wrap">
               {tags.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
@@ -53,6 +59,13 @@ const BlogCard = ({ post }) => {
           </div>
         </div>
       </article>
+      <button className="absolute right-4 bottom-4 z-10">
+        {isHovered && (
+          <Link href={`/blog/${slug}`} className="">
+            <TrailingArrows toggle={isHovered} />
+          </Link>
+        )}
+      </button>
     </animated.li>
   )
 }
@@ -84,13 +97,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               {title}
             </h1>
 
-            <div className="relative w-[32rem] ">
+            <div className="relative w-full md:w-[32rem] ">
               <input
                 aria-label="Search articles"
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search articles"
-                className="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
+                className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
               />
               <svg
                 className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -109,7 +122,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </div>
           </div>
         </div>
-        <ul className="mx-auto mt-6 flex flex-wrap justify-center gap-4">
+        <ul className="mx-auto mt-6 mb-12 flex w-full flex-col flex-wrap justify-center gap-4 md:flex-row">
           {/* {displayPosts.map((frontMatter) => {
             return <BlogCard key={frontMatter.slug} post={frontMatter} />
           })} */}

@@ -15,7 +15,7 @@ const LayerImage = ({ size, ...rest }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="h-full w-full bg-blue-500 dark:bg-cyan-400"
+      className="h-full w-full bg-primary-400"
     >
       <animated.div style={{ opacity }}>
         <NextImage {...rest} height={size} width={size} alt="test" layout="fill" />

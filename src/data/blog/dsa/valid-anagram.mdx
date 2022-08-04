@@ -40,8 +40,8 @@ letters to form a completely different word. Hopefully that makes sense.
 
 ### Solution #1: (Hash Map)
 
-<CodeSnippet
-  code={`def hash_is_anagram(first_word: str, second_word: str) -> bool:
+```python:hashmap_valid_anagram.py
+def hash_is_anagram(first_word: str, second_word: str) -> bool:
     first_hash_map = dict()
     second_hash_map = dict()
 
@@ -55,14 +55,8 @@ letters to form a completely different word. Hopefully that makes sense.
         second_hash_map[_letter] = second_hash_map.get(_letter, 0) +1
 
     # Compares both hash_maps
-    return first_hash_map == second_hash_map`}
-
-language="python"
-showLineNumbers
-lineFocus={[]}
-addedLines={[]}
-removedLines={[]}
-/>
+    return first_hash_map == second_hash_map
+```
 
 <BlogWarning variant="info" title="Multiple Assignment">
   In python you could also do `first_hash, second_hash = {}, {}`  &#8592;  This is called multiple assignment.
@@ -84,11 +78,9 @@ if a new occurrence is found to the value.
 
 Our `dict` would look like this for the word HEART:
 
-<CodeSnippet
-  code={`anagram_hash_map = { "H":1, "E":1, "A":1, "R":1, "T":1 }`}
-  language="python"
-  showLineNumbers={false}
-/>
+```
+anagram_hash_map = { "H":1, "E":1, "A":1, "R":1, "T":1 }
+```
 
 In this example we do not have any duplicate letter,
 but if we did, then we would simply add it to its respective key.

@@ -4,7 +4,7 @@ import { animated, config, useTransition } from 'react-spring'
 // Elements
 const Title = () => (
   <animated.h2 className="text-center md:text-left">
-    Hi! I&apos;m <span className="gradient-text">Fabian Rodriguez</span>
+    Hi! I&apos;m <span className="text-primary-600 dark:text-primary-400">Fabian Rodriguez</span>
   </animated.h2>
 )
 
@@ -12,7 +12,7 @@ const AboutMe = () => (
   <animated.h6 className={'mt-6 text-center md:text-left'}>
     Welcome! In this blog we will cover, informative and insightful posts about software and
     programming, while I&apos;m learning new things as a{' '}
-    <span className="gradient-text "> Software Engineer </span> /
+    <span className="text-primary-600 dark:text-primary-400 "> Software Engineer </span>
   </animated.h6>
 )
 
@@ -20,7 +20,7 @@ const GetInTouch = () => (
   <Link href="/contact" passHref>
     <animated.button
       className={
-        'main-color mx-auto mt-6 flex rounded-xl border-0 py-2 px-8 text-2xl font-bold text-white hover:bg-opacity-80 lg:mx-0'
+        'mx-auto mt-6 flex rounded-xl border-0 bg-primary-600 py-2 px-8 text-2xl font-bold text-white hover:bg-opacity-80 dark:bg-primary-400 dark:text-[#000621] lg:mx-0'
       }
     >
       Get In Touch

@@ -14,7 +14,9 @@ const CoolText = ({ children, color }) => {
         />
       </Head>
 
-      <span className={'font-sriracha font-black italic ' + color}>{children}</span>
+      <span className={'font-sriracha font-black italic text-blue-500 dark:text-cyan-400 '}>
+        {children}
+      </span>
     </span>
   )
 }

@@ -8,14 +8,20 @@ import { skills } from './constants'
 
 export function CarouselItem({ skill, title }) {
   return (
-    <div className={'flex w-full flex-col items-center space-y-6 py-6 px-12'}>
+    <div className={'flex w-full flex-col items-center space-y-6 py-6 lg:px-12'}>
       <div className={'flex h-full w-32 items-center overflow-hidden rounded-full p-4'}>
         <skill.icon />
       </div>
       <animated.div
         className={' flex h-full w-full flex-col items-center justify-center space-y-6'}
       >
-        <h3 className={'gradient-text h-full text-center text-4xl lg:text-5xl'}>{title}</h3>
+        <h3
+          className={
+            'h-full text-center text-4xl text-primary-600 dark:text-primary-400 lg:text-5xl'
+          }
+        >
+          {title}
+        </h3>
         <p className={'text-center text-2xl'}>{skill.description}</p>
       </animated.div>
     </div>
@@ -40,18 +46,18 @@ export default function SkillsCarousel() {
       <animated.button
         onClick={slideToPrevItem}
         className={
-          'main-color absolute -left-7 top-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full lg:top-0 lg:bottom-0'
+          'absolute -left-7 top-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full bg-primary-600 dark:bg-primary-400 lg:top-0 lg:bottom-0'
         }
       >
-        <TiChevronLeft className={'h-full w-full text-white'} />
+        <TiChevronLeft className={'h-full w-full text-white dark:text-[#000621]'} />
       </animated.button>
       <animated.button
         onClick={slideToNextItem}
         className={
-          'main-color absolute -right-7 bottom-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full lg:top-0 lg:bottom-0'
+          'absolute -right-7 bottom-8 z-20 my-auto h-14 w-14 cursor-pointer rounded-full bg-primary-600 dark:bg-primary-400 lg:top-0 lg:bottom-0'
         }
       >
-        <TiChevronRight className={'h-full w-full text-white'} />
+        <TiChevronRight className={'h-full w-full text-white dark:text-[#000621]'} />
       </animated.button>
     </div>
   )

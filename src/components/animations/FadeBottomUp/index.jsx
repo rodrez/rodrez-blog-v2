@@ -6,16 +6,18 @@ const FadeBottomUp = ({ children }) => {
   const [inView, setInView] = useState(false)
 
   const transition = useSpring({
-    delay: 1000,
     duration: 1000,
     from: {
-      transform: 'translateY(500px)',
+      opacity: 0,
+      transform: 'translateY(-100px)',
     },
     to: {
-      transform: !inView ? 'translateY(500px)' : 'translateY(0px)',
+      opacity: 1,
+      transform: !inView ? 'translateY(-100px)' : 'translateY(0px)',
     },
     leave: {
-      transform: !inView ? 'translateY(0px)' : 'translateY(500px)',
+      opacity: 0,
+      transform: !inView ? 'translateY(0px)' : 'translateY(-100px)',
     },
     config: config.molasses,
   })

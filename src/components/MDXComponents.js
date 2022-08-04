@@ -5,6 +5,7 @@ import CodeSnippet from '@components/blogComponents/CodeSnippet'
 import CoolText from '@components/blogComponents/CoolText'
 import HoverMe from '@components/blogComponents/HoverMe'
 import BlogTable from '@components/blogComponents/Table'
+import { slugify } from '@utils/general'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useMemo } from 'react'
 
@@ -13,6 +14,7 @@ import { useMemo } from 'react'
 // import DynamicTOC from '../blog/posts/DynamicTOC'
 import Image from './Image'
 import CustomLink from './Link'
+import LinkedHeading from './LinkedHeading'
 import { BlogNewsletterForm } from './NewsletterForm'
 import PageTitle from './PageTitle'
 import Pre from './Pre'
@@ -30,6 +32,8 @@ export const MDXComponents = {
   BlogTable,
   Indexing,
   CodeSnippet,
+  h1: ({ children }) => <LinkedHeading fontSize={'text-3xl'}>{children}</LinkedHeading>,
+  h2: ({ children }) => <LinkedHeading fontSize={'text-2xl'}>{children}</LinkedHeading>,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />

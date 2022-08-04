@@ -28,8 +28,8 @@ module.exports = {
         body: ['Pally', 'Comic Sans MS', 'sans-serif'],
       },
       colors: {
+        primary: colors.amber,
         background: '#2C2450',
-        primary: '#CFABF9',
         accent: '#FFE161',
         'kinda-white': '#F7F7F7',
         'secondary-accent': '#9DD7A7',

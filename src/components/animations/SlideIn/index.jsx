@@ -1,11 +1,17 @@
 import { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { animated, config, useSpring } from 'react-spring'
 import { Waypoint } from 'react-waypoint'
 
 const SlideIn = ({ children, reverse }) => {
   const [inView, setInView] = useState(false)
 
-  const reversed = reverse ? 200 : -200
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1024px)',
+  })
+
+  let reversed = reverse ? 200 : -200
+  reversed = isDesktopOrLaptop ? reversed : 0
 
   const transition = useSpring({
     delay: 300,

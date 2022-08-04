@@ -2,7 +2,7 @@
 
 // Original: https://github.com/sdras/night-owl-vscode-theme
 // Converted automatically using ./tools/themeFromVsCode
-var theme = {
+const theme = {
   plain: {
     color: '#d6deeb',
     backgroundColor: '#011627',

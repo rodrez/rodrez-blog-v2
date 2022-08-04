@@ -39,7 +39,7 @@ export default function Indexing({ length, start = 0, highlight = [] }) {
               className={classNames(
                 'flex w-8  items-center justify-center border-2',
                 highlight.includes(index)
-                  ? 'border-4 border-red-600 dark:border-amber-400'
+                  ? 'border-4 border-red-600 dark:border-primary-400'
                   : ' border-slate-500'
               )}
             >
@@ -52,7 +52,7 @@ export default function Indexing({ length, start = 0, highlight = [] }) {
               className={classNames(
                 'flex w-8  items-center justify-center border-2',
                 highlight.includes(index)
-                  ? 'border-4 border-red-600 dark:border-amber-400'
+                  ? 'border-4 border-red-600 dark:border-primary-400'
                   : ' border-slate-500'
               )}
             >

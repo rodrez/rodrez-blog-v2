@@ -74,7 +74,7 @@ export default function HoverMe({ children, meaning, elementId }) {
       onClick={() => setShow(!show)}
     >
       <span className="font-bold text-r-purple dark:text-light-green"> {children}</span>
-      <span className="font-bold text-amber-500">*</span>
+      <span className="font-bold text-primary-500">*</span>
       <animated.div
         id={elementId}
         style={{ ...props }}
