@@ -32,13 +32,13 @@ letters to form a completely different word. Hopefully that makes sense.
   ]}
 />
 
-### Constraints
+## Constraints
 
 `1 <= s.length`, `t.length <= 5 * 104`
 
 `s` and `t` consist of lowercase English letters.
 
-### Solution #1: (Hash Map)
+## Solution #1: (Hash Map)
 
 ```python:hashmap_valid_anagram.py
 def hash_is_anagram(first_word: str, second_word: str) -> bool:
@@ -99,7 +99,7 @@ Space Complexity: O(n) -> Two variables created for the hashmap
 
 <BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n)', 'O(n)']]} />
 
-### Solution #2: (Clever Sort)
+## Solution #2: (Clever Sort)
 
 <CodeSnippet
   code={`def sort_is_anagram(s: str, t: str) -> bool:
@@ -122,8 +122,6 @@ Space Complexity: O(n) -> Two variables created for the hashmap
     It works because when we sort the word HEART, we get the following:
 
     `['A', 'E', 'H', 'R', 'T']`
-
-{" "}
 
 <BlogWarning variant="info" title="Multiple Assignment">
   In python a quick way to sort a word in python is to use the `sorted(your_word)` function. Using
