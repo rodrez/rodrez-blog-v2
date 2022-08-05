@@ -1,0 +1,32 @@
+---
+title: Django Web Sockets with Channels & Docker
+date: '2022-08-05'
+tags: ['django', 'docker', 'websockets']
+draft: false
+summary: How to create a live app with Django, Webscoket, Cookiecutter and Docker
+images: []
+layout: PostSimple
+canonicalUrl: www.rodrez.com/blog/django/docker-web-sockets-with-channels-and-docker
+---
+
+# Django Web Sockets with Channels & Docker
+
+# Setting Channels in Django Settings
+
+- It is important that if you are using Docker, keep in mind that we have to setup two env varibles:
+
+`REDIS_HOST=redis`
+`REDIS_PORT=6379`
+
+Notice the host is just redis instead of 127.0.0.1, the reason for this is because,
+although Redis is running, your python container isn't able to communicate with it;
+this is because it's trying to connect to 127.0.0.1:6379, but from the container's perspective,
+there's nothing running there.^[This answer was provided in SO by Saites. [Stack Overflow Question](https://stackoverflow.com/questions/59976480/docker-errno-111-connect-call-failed-127-0-0-1-6379#:~:text=22-,Try%20changing%20127.0.0.1%3A6379%20to%20redis%3A6379.,-Although%20Redis%20is)]
+
+Note: Updated Django Cookie Cutter `compose/local/start file`.
+
+```bash:compose/local/django/start.sh
+...
+#uvicorn config.asgi:application --host 0.0.0.0 --reload
+python manage.py runserver 0.0.0.0:8000 # New Addition
+```

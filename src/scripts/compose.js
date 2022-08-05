@@ -6,13 +6,14 @@ const dedent = require('dedent')
 const root = process.cwd()
 
 const getAuthors = () => {
-  const authorPath = path.join(root, 'src/data', 'src/authors')
+  const authorPath = path.join(root, 'src/data', 'authors')
+  console.log(authorPath)
   const authorList = fs.readdirSync(authorPath).map((filename) => path.parse(filename).name)
   return authorList
 }
 
 const getLayouts = () => {
-  const layoutPath = path.join(root, 'layouts')
+  const layoutPath = path.join(root, 'src/layouts')
   const layoutList = fs
     .readdirSync(layoutPath)
     .map((filename) => path.parse(filename).name)
@@ -107,8 +108,8 @@ inquirer
       .replace(/ /g, '-')
       .replace(/-+/g, '-')
     const frontMatter = genFrontMatter(answers)
-    if (!fs.existsSync('src/data/blog')) fs.mkdirSync('data/blog', { recursive: true })
-    const filePath = `data/blog/${fileName ? fileName : 'untitled'}.${
+    if (!fs.existsSync('src/data/blog')) fs.mkdirSync('src/data/blog', { recursive: true })
+    const filePath = `src/data/blog/${fileName ? fileName : 'untitled'}.${
       answers.extension ? answers.extension : 'md'
     }`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {

@@ -95,7 +95,7 @@ h6 {
   @apply text-2xl font-bold;
 }
 code {
-  @apply rounded bg-slate-700 px-1 py-0.5 font-mono text-code dark:bg-[#00051D] dark:prose-pre:bg-[#00051D];
+  @apply rounded bg-slate-700 px-1 py-0.5 font-mono  text-code dark:bg-[#00051D] dark:prose-pre:bg-[#00051D];
 }
 
 .dimensional-one::after {
@@ -391,4 +391,9 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   @apply rounded-full bg-slate-700;
+}
+
+/* Footnotes */
+[aria-describedby='footnote-label'] {
+  @apply font-bold text-amber-600 dark:text-amber-400;
 }

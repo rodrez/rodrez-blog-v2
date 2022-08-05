@@ -63,7 +63,7 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre className="text-lg">{props.children}</pre>
+      <pre className="">{props.children}</pre>
     </div>
   )
 }
