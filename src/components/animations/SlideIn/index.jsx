@@ -14,7 +14,8 @@ const SlideIn = ({ children, reverse }) => {
   reversed = isDesktopOrLaptop ? reversed : 0
 
   const transition = useSpring({
-    delay: 300,
+    delay: 200,
+    duration: 400,
     from: {
       opacity: 0,
       x: reversed,
@@ -31,7 +32,12 @@ const SlideIn = ({ children, reverse }) => {
   })
 
   return (
-    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)}>
+    <Waypoint
+      onEnter={() => setInView(true)}
+      onLeave={() => setInView(false)}
+      topOffset={'35%'}
+      bottomOffset={'34%'}
+    >
       <animated.div style={transition}>{children}</animated.div>
     </Waypoint>
   )

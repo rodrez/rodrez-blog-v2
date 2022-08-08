@@ -7,7 +7,7 @@ const FadeIn = ({ children }) => {
 
   const transition = useSpring({
     delay: 300,
-    duration: 1000,
+    duration: 500,
     from: {
       opacity: 0,
     },
@@ -21,7 +21,12 @@ const FadeIn = ({ children }) => {
   })
 
   return (
-    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)}>
+    <Waypoint
+      onEnter={() => setInView(true)}
+      onLeave={() => setInView(false)}
+      topOffset={'30%'}
+      bottomOffset={'30%'}
+    >
       <animated.div style={transition}>{children}</animated.div>
     </Waypoint>
   )

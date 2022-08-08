@@ -6,7 +6,7 @@ const FadeBottomUp = ({ children }) => {
   const [inView, setInView] = useState(false)
 
   const transition = useSpring({
-    duration: 1000,
+    duration: 500,
     from: {
       opacity: 0,
       transform: 'translateY(-100px)',
@@ -23,7 +23,7 @@ const FadeBottomUp = ({ children }) => {
   })
 
   return (
-    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)}>
+    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)} topOffset={'30%'}>
       <animated.div style={transition}>{children}</animated.div>
     </Waypoint>
   )

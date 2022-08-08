@@ -35,7 +35,7 @@ function Skills() {
   }
 
   return (
-    <animated.section className="relative z-10 mx-auto my-48 mb-20 flex w-full flex-col items-center justify-center py-24 pt-48">
+    <animated.section className="relative z-10 mx-auto my-12 flex w-full flex-col items-center justify-center py-24 pt-48">
       <animated.h3 className="mx-auto mt-6 mb-6 text-center text-primary-600 dark:text-primary-400">
         Skills
       </animated.h3>

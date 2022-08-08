@@ -11,9 +11,11 @@ const ScaleIn = ({ children, delay, duration, reverse, ...props }) => {
     duration: duration || 1000,
     from: {
       scale: 0,
+      y: 0,
     },
     to: {
       scale: !inView ? 0 : 1,
+      y: !inView ? 0 : 10,
     },
     config: config.molasses,
   })
