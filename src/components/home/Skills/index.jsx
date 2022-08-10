@@ -15,19 +15,19 @@ function Skills() {
       class: (number) => `top-8 left-0 lg:top-40 lg:left-6  h-${number} w-${number}`,
     },
     JavaScript: {
-      class: (number) => `top-40 right-4 lg:top-12 lg:right-16 h-${number} w-${number}`,
+      class: (number) => `-top-4 right-4 lg:top-12 lg:right-16 h-${number} w-${number}`,
     },
     React: {
       class: (number) => `top-36 right-52 lg:top-36 h-${number} w-${number}`,
     },
     TypeScript: {
-      class: (number) => `bottom-4 right-40 h-${number} w-${number}`,
+      class: (number) => `bottom-4 right-52 h-${number} w-${number}`,
     },
     Django: {
       class: (number) => `top-20 left-52 h-${number} w-${number}`,
     },
     NextJS: {
-      class: (number) => `bottom-24 left-52 lg:bottom-12 lg:left-20 h-${number} w-${number}`,
+      class: (number) => `bottom-12 left-52 lg:bottom-12 lg:left-20 h-${number} w-${number}`,
     },
     Tailwind: {
       class: (number) => `bottom-0 left-32 lg:bottom-8 lg:left-1/2 h-${number} w-${number}`,
@@ -35,7 +35,7 @@ function Skills() {
   }
 
   return (
-    <animated.section className="relative z-10 mx-auto my-12 flex w-full flex-col items-center justify-center py-24 pt-48">
+    <animated.section className="relative z-10 mx-auto my-20 flex w-full flex-col items-center justify-center py-24 pt-48">
       <animated.h3 className="mx-auto mt-6 mb-6 text-center text-primary-600 dark:text-primary-400">
         Skills
       </animated.h3>

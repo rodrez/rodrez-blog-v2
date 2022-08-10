@@ -5,7 +5,7 @@ lastmod: '2021-02-01'
 tags: ['next-js', 'tailwind', 'guide']
 draft: false
 summary: 'An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more'
-layout: PostSimple
+layout: true
 bibliography: references-data.bib
 canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/new-features-in-v1/
 ---
@@ -332,7 +332,7 @@ To modify the styles, change the following class selectors in the `prism.css` fi
 }
 
 .highlight-line {
-  @apply border-primary-500 -mx-4 border-l-4 bg-gray-700 bg-opacity-50;
+  @apply -mx-4 border-l-4 border-primary-500 bg-gray-700 bg-opacity-50;
 }
 
 .line-number::before {

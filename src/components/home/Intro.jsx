@@ -12,7 +12,7 @@ const AboutMe = () => (
   <animated.h6 className={'mt-6 text-center md:text-left'}>
     Welcome! In this blog we will cover, informative and insightful posts about software and
     programming, while I&apos;m learning new things as a{' '}
-    <span className="text-primary-600 dark:text-primary-400 "> Software Engineer </span>
+    <span className="text-primary-600 dark:text-primary-400 "> Software Engineer. </span>
   </animated.h6>
 )
 

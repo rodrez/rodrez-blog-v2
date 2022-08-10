@@ -2,7 +2,7 @@ import HomeIntro from '@components/home/Intro'
 import Newsletter from '@components/home/Newsletter'
 import Projects from '@components/home/Projects'
 import Skills from '@components/home/Skills'
-import Icon from '@components/svg/P'
+// import ProgrammingImage from '@components/svg/P'
 import ProgrammingImage from '@components/svg/ProgrammingImage'
 import { config as particlesConfig } from '@libs/particles/config'
 import { useTheme } from 'next-themes'
@@ -30,16 +30,16 @@ const About = () => {
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
-        options={particlesConfig(resolvedTheme === 'light' ? '#D6F6FC' : '#2F3244')}
+        options={particlesConfig(resolvedTheme === 'light' ? '#FEE7CC' : '#2F3244')}
       />
-      <div className="mx-auto flex w-11/12 flex-col items-center justify-center pt-16 md:pt-52 xl:w-11/12">
+      <div className="mx-auto flex w-11/12 flex-col items-center justify-center lg:mt-2 xl:w-11/12 2xl:mt-48">
         <div className="mx-auto mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2 ">
           <HomeIntro />
           <div className={'relative z-10 order-1 h-0 pb-[56.25%] lg:order-2'}>
-            <Icon className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'} />
-            {/* <ProgrammingImage
+            {/* <Icon className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'} /> */}
+            <ProgrammingImage
               className={'absolute top-0 right-0 h-[100%] w-[100%] lg:scale-[1.75]'}
-            /> */}
+            />
           </div>
         </div>
 

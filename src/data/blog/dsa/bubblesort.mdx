@@ -2,9 +2,9 @@
 title: 'Bubble Sort'
 summary: 'The most loved programming language in the world for 6 years.'
 author: 'Fabian Rodriguez'
-createdOn: '2020-06-01'
-lastmod: '2020-06-01'
-tags: [algorithms]
+date: '06/01/22'
+lastmod: '06/01/22'
+tags: [algorithms, dsa]
 published: false
 ---
 
@@ -20,18 +20,11 @@ Let's take for exmaple the following array: `[5, 3, 1, 2, 4]`
 
 The first loop will look something like this:
 
-<CodeSnippet 
-  code={`array = [5, 3, 1, 2, 4]
+```python
+array = [5, 3, 1, 2, 4]
 
 for i in range(0, len(array)):
 for j in range(0, len(array) - i - 1):
 if array[j] > array[j + 1]:
 array[j], array[j + 1] = array[j + 1], array[j]
-`}
-
-language="python"
-showLineNumbers
-lineFocus={[]}
-addedLines={[]}
-removedLines={[]}
-/>
+```

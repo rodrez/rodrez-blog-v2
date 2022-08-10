@@ -43,7 +43,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {children}
               </div>
             </div>
-            <Comments frontMatter={frontMatter} />
+            {/* <Comments frontMatter={frontMatter} /> */}
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && (

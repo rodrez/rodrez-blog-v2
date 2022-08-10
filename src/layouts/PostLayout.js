@@ -8,7 +8,7 @@ import { BlogSEO } from '@components/SEO'
 import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/src/data/blog/${fileName}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${siteMetadata.siteUrl}/blog/${slug}`
@@ -91,14 +91,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="dark:prose-dark prose max-w-none pt-10 pb-8 prose-code:text-code dark:prose-invert dark:prose-pre:bg-[#00051D]">
                 {children}
               </div>
-              <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+              {/* <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(slug)} rel="nofollow">
                   {'Discuss on Twitter'}
                 </Link>
                 {` • `}
                 <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
               </div>
-              <Comments frontMatter={frontMatter} />
+              <Comments frontMatter={frontMatter} /> */}
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">

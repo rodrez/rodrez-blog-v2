@@ -124,7 +124,7 @@ export async function getAllFilesFrontMatter(folder) {
     }
     const source = fs.readFileSync(file, 'utf8')
     const { data: frontmatter } = matter(source)
-    if (frontmatter.draft !== true) {
+    if (frontmatter.draft !== true || process.env.NEXT_PUBLIC_ENV === 'development') {
       allFrontMatter.push({
         ...frontmatter,
         slug: formatSlug(fileName),

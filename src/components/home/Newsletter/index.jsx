@@ -67,7 +67,7 @@ export default function Newsletter() {
         <div className="mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div
             ref={newsletterRef}
-            className="rounded-3xl border-2 border-primary-600 py-10 px-6 dark:border-primary-400 sm:py-16 sm:px-12 lg:flex lg:items-center lg:p-20"
+            className="rounded-3xl border-2 border-primary-600 bg-white py-10 px-6 dark:border-primary-400 dark:bg-dark-background sm:py-16 sm:px-12 lg:flex lg:items-center lg:p-20"
           >
             {showConfetti && (
               <Confetti
@@ -78,10 +78,10 @@ export default function Newsletter() {
               />
             )}
             <div className=" lg:flex-1">
-              <h2 className="text-3xl font-extrabold tracking-tight">Sign up for our newsletter</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight">Like what you are reading?</h2>
               <p className="mt-4 max-w-3xl text-lg">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat
-                commodo. Elit sunt amet fugiat.
+                Feel free to join our awesome newsletter to get the latest articles straight in your
+                inbox!
               </p>
             </div>
             <div className="lg:mt-0 lg:ml-8 lg:flex-1">
@@ -98,7 +98,7 @@ export default function Newsletter() {
                     value={email}
                     autoComplete="email"
                     required
-                    className="w-full rounded-md px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-amber-400 dark:bg-dark-background"
+                    className="w-full rounded-md border-0 px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2 focus:ring-offset-amber-400 dark:bg-[#000621]"
                     placeholder="Enter your email"
                   />
 

@@ -1,4 +1,5 @@
 import { classNames } from '@utils/general'
+import Link from 'next/link'
 import { v4 as uuid } from 'uuid'
 
 import SlideIn from '../animations/SlideIn'
@@ -13,8 +14,8 @@ const SingleProject = ({ project, index }) => {
       {/* Layered Image */}
       <div
         className={classNames(
-          index % 2 === 0 ? 'left-4 ' : 'right-4',
-          'absolute top-1/2 z-0 hidden h-80 -translate-y-1/2 overflow-hidden rounded-lg lg:block  xl:w-6/12'
+          index % 2 === 0 ? '-left-32  lg:-left-2' : '-right-32 lg:-right-2',
+          'absolute top-1/2 z-0 hidden h-80 -translate-y-1/2 overflow-hidden rounded-lg lg:block lg:w-9/12 2xl:w-7/12'
         )}
       >
         <LayerImage className={'shadow-md'} src={project.image} />
@@ -41,8 +42,8 @@ const SingleProject = ({ project, index }) => {
         </div>
         <div
           className={classNames(
-            index % 2 === 0 ? 'lg:justify-end ' : 'lg:justify-start',
-            'flex flex-wrap gap-x-4 gap-y-2'
+            index % 2 === 0 ? 'lg:ml-auto  lg:justify-end' : 'lg:mr-auto lg:justify-start',
+            'flex w-8/12 flex-wrap gap-x-4 gap-y-2'
           )}
         >
           {project.stack.split(',').map((tech) => (
@@ -52,9 +53,11 @@ const SingleProject = ({ project, index }) => {
           ))}
         </div>
         {/* <GradientBorder> */}
-        <button className="rounded border-2 border-primary-600 py-1 px-2 text-xl font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400 md:ml-0 md:mr-auto lg:mr-auto lg:ml-auto xl:px-12">
-          Learn More
-        </button>
+        <Link href={project.url} passHref>
+          <button className="rounded border-2 border-primary-600 py-1 px-2 text-xl font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400 md:ml-0 md:mr-auto lg:mr-auto lg:ml-auto xl:px-12">
+            Learn More
+          </button>
+        </Link>
         {/* </GradientBorder> */}
       </div>
       {/* Project Information Ends */}
@@ -82,7 +85,7 @@ export default function Projects() {
       ),
       stack: 'React, Redux, Node, Express, MongoDB, MUI, Jest, Enzyme',
       image: '/static/images/projects/next-oms.png',
-      url: 'https://next-oms.netlify.app/',
+      url: 'projects/next-oms',
     },
     {
       id: uuid(),
@@ -97,8 +100,8 @@ export default function Projects() {
         </div>
       ),
       stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
-      image: '/static/images/projects/mythus.png',
-      url: 'https://dsa.netlify.app/',
+      image: '/static/images/projects/dsa.png',
+      url: 'tags/dsa',
     },
     {
       id: uuid(),
@@ -112,7 +115,7 @@ export default function Projects() {
 
       stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
       image: '/static/images/projects/mythus.png',
-      url: 'https://mythus.netlify.app/',
+      url: 'https://mythus.io',
     },
     // {
     //   id: uuid(),

@@ -4,7 +4,7 @@ import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 import formatDate from '@libs/utils/formatDate'
 import { classNames } from '@utils/general'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { animated, useSpring, useTransition } from 'react-spring'
 
 import AnimatedBorder from '../components/animations/AnimatedBorder'
@@ -77,6 +77,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
+  const [tags, setTags] = useState([])
+
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
@@ -88,13 +90,27 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     leave: { opacity: 0, transform: 'translateY(-20px)' },
   })
 
+  useEffect(() => {
+    let allTask = []
+    for (let index = 0; index < posts.length; index++) {
+      const post = posts[index]
+      allTask = [...allTask, ...post.tags]
+    }
+    let tagHashMap = {}
+    for (let index = 0; index < allTask.length; index++) {
+      const task = allTask[index]
+      tagHashMap[allTask[index]] = allTask[index]
+    }
+    setTags(Object.keys(tagHashMap))
+  }, [posts])
+
   return (
     <>
-      <div className="">
+      <div className="my-48">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div className="flex w-full flex-col items-center justify-center gap-4">
             <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
-              {title}
+              {title === 'Dsa' ? 'Data Structures and Algorithms' : title}
             </h1>
 
             <div className="relative w-full md:w-[32rem] ">
@@ -121,6 +137,14 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               </svg>
             </div>
           </div>
+          {/* tags */}
+          {/* <div className="flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <div className="whitespace-nowrap rounded bg-slate-600 px-2" key={index}>
+                {tag}
+              </div>
+            ))}
+          </div> */}
         </div>
         <ul className="mx-auto mt-6 mb-12 flex w-full flex-col flex-wrap justify-center gap-4 md:flex-row">
           {/* {displayPosts.map((frontMatter) => {

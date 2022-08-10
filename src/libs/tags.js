@@ -1,6 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+
 import { getFiles } from './mdx'
 import kebabCase from './utils/kebabCase'
 
@@ -14,7 +15,7 @@ export async function getAllTags(type) {
   files.forEach((file) => {
     const source = fs.readFileSync(path.join(root, 'src/data', type, file), 'utf8')
     const { data } = matter(source)
-    if (data.tags && data.draft !== true) {
+    if (data.tags && (data.draft !== true || process.env.NEXT_PUBLIC_ENV === 'development')) {
       data.tags.forEach((tag) => {
         const formattedTag = kebabCase(tag)
         if (formattedTag in tagCount) {
