@@ -150,26 +150,20 @@ We will complete this one with only one for loop.
 
 I know it's a bit confusing, but we'll go over it now.
 
-In <CoolText color="text-r-purple dark:text-light-green">Line 2</CoolText> of the code snippet above we simple create a new python dictionary (hashmap). In
+In <CoolText>Line 2</CoolText> of the code snippet above we simple create a new python dictionary (hashmap). In
 
-<CoolText color="text-r-purple dark:text-light-green" space>
-  Line 4
-</CoolText>
+<CoolText space>Line 4</CoolText>
 we start our loop with enumerate to get both the index and the value. (In that order).
-<CoolText color="text-r-purple dark:text-light-green" space>
-  Line 5
-</CoolText>
+<CoolText space>Line 5</CoolText>
 is where we create our `remainder` variable to hold the reminder of the `target - num`, num being the
 value.
-<CoolText color="text-r-purple dark:text-light-green space"> Line 6</CoolText>
+<CoolText> Line 6</CoolText>
 is where we try to get the remainder from the hashmap. In python we use get to avoid `KeyValue Errors`.
 If we are able to get the key, that means we have two numbers that add up to the target. Soooo...
-<CoolText color="text-r-purple dark:text-light-green" space>
-  Line 7
-</CoolText>
+<CoolText space>Line 7</CoolText>
 returns the index of both numbers.
-<CoolText color="text-r-purple dark:text-light-green">Line 8 </CoolText>, if the num was not in the
-hashmap, we simple add it at the end of the iteration.
+<CoolText>Line 8 </CoolText>, if the num was not in the hashmap, we simple add it at the end of the
+iteration.
 
 <BlogTable headers={['Time Complexity', 'Space Complexity']} rows={[['O(n)', 'O(n)']]} />
 

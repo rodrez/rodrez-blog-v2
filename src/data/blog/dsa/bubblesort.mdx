@@ -1,6 +1,6 @@
 ---
 title: 'Bubble Sort'
-summary: 'The most loved programming language in the world for 6 years.'
+summary: 'A simple algorithm for sorting.'
 author: 'Fabian Rodriguez'
 date: '06/01/22'
 lastmod: '06/01/22'
@@ -24,7 +24,7 @@ The first loop will look something like this:
 array = [5, 3, 1, 2, 4]
 
 for i in range(0, len(array)):
-for j in range(0, len(array) - i - 1):
-if array[j] > array[j + 1]:
-array[j], array[j + 1] = array[j + 1], array[j]
+    for j in range(0, len(array) - i - 1):
+        if array[j] > array[j + 1]:
+            array[j], array[j + 1] = array[j + 1], array[j]
 ```
