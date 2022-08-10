@@ -2,6 +2,7 @@ import '@css/tailwind.css'
 import '@css/prism.css'
 import 'katex/dist/katex.css'
 import '@fontsource/inter/variable-full.css'
+import '@fontsource/sriracha'
 
 import Analytics from '@components/analytics'
 import { ClientReload } from '@components/ClientReload'

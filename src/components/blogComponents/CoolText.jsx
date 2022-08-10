@@ -1,21 +1,14 @@
-import Head from 'next/head'
 import React from 'react'
 
-const CoolText = ({ children, color }) => {
+const CoolText = ({ children, space }) => {
   return (
-    <span className={'inline-block '}>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <span className={'font-sriracha font-black italic text-blue-500 dark:text-cyan-400 '}>
+    <span className={'inline-block'}>
+      <span
+        style={{ fontFamily: 'Sriracha, cursive' }}
+        className={' font-sriracha font-black italic text-amber-500 dark:text-amber-400'}
+      >
         {children}
+        {space && <>&nbsp;</>}
       </span>
     </span>
   )

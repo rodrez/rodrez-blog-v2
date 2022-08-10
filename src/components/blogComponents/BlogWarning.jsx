@@ -4,7 +4,9 @@ import { TiWarning } from 'react-icons/ti'
 
 const Icon = ({ getType }) => {
   return (
-    <div className={'absolute -top-6 -left-8 m-auto rounded-full bg-white p-2 dark:bg-slate-700'}>
+    <div
+      className={'absolute -top-6 -left-8 m-auto rounded-full bg-white p-2 dark:bg-dark-background'}
+    >
       <div className={`flex h-12  w-12 rounded-full border-4 border-blue-600 dark:border-blue-400`}>
         {getType()}
       </div>
@@ -27,14 +29,14 @@ const BlogWarning = ({ children, title, variant }) => {
   return (
     <div className="my-10 dark:text-white">
       <div
-        className={`shadow-3xl relative rounded-r-2xl border-l-4 border-blue-600 bg-white dark:border-blue-400 dark:bg-slate-700`}
+        className={`shadow-3xl relative rounded-r-2xl border-l-4 border-blue-600 bg-white dark:border-blue-400 dark:bg-dark-background`}
       >
         {/* Icon Starts */}
         <Icon getType={getType} />
         {/* Icon Ends */}
 
         {/* Content Container  Starts*/}
-        <div className="rounded-r-2xl bg-white px-10 py-4 shadow-lg dark:bg-slate-700">
+        <div className="rounded-r-2xl bg-white px-10 py-4 shadow-lg dark:bg-dark-background">
           {/* Title Starts*/}
           <div className={''}>
             <h5 className={`font-bold text-blue-600 dark:text-blue-400`}>{title}</h5>

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",
+    "@fontsource/sriracha": "^4.5.9",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@react-spring/parallax": "^9.5.2",
     "@supabase/supabase-js": "^1.35.4",
