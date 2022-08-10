@@ -13,7 +13,6 @@ import { loadFull } from 'tsparticles'
 const About = () => {
   const { resolvedTheme } = useTheme()
   const particlesInit = React.useCallback(async (engine) => {
-    console.log(engine)
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
@@ -21,9 +20,7 @@ const About = () => {
     await loadFull(engine)
   }, [])
 
-  const particlesLoaded = React.useCallback(async (container) => {
-    await console.log(container)
-  }, [])
+  const particlesLoaded = React.useCallback(async (container) => {}, [])
   return (
     <div className={resolvedTheme === 'dark' ? '-mt-6' : ' -mt-6'}>
       <Particles
