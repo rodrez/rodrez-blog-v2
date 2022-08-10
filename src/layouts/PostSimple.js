@@ -28,6 +28,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                 </div>
+                <div>
+                  <dd
+                    id={'reading_time'}
+                    className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
+                  >
+                    <span>{frontMatter.readingTime.text}</span>
+                  </dd>
+                </div>
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>

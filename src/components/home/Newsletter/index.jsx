@@ -52,7 +52,7 @@ export default function Newsletter() {
   const newsletterRef = React.useRef(null)
   const [dimensions, setDimensions] = React.useState({ width: 0, height: 0 })
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (newsletterRef.current) {
       setDimensions({
         width: newsletterRef.current.offsetWidth,
