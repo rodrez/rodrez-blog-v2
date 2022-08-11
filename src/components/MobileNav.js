@@ -19,7 +19,7 @@ const MobileNav = () => {
   }
 
   return (
-    <div className="z-40 sm:hidden">
+    <div className="sm:hidden">
       <button
         type="button"
         className="ml-1 mr-1 h-8 w-8 rounded py-1"
