@@ -5,6 +5,7 @@ import CodeSnippet from '@components/blogComponents/CodeSnippet'
 import CoolText from '@components/blogComponents/CoolText'
 import HoverMe from '@components/blogComponents/HoverMe'
 import BlogTable from '@components/blogComponents/Table'
+import ImageWithSource from '@components/Image/WithSource'
 import { slugify } from '@utils/general'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useMemo } from 'react'
@@ -30,6 +31,7 @@ export const MDXComponents = {
   BlogWarning,
   HoverMe,
   BlogTable,
+  ImageWithSource,
   Indexing,
   CodeSnippet,
   h1: ({ children }) => <LinkedHeading fontSize={'text-3xl'}>{children}</LinkedHeading>,
