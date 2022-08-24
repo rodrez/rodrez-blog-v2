@@ -10,6 +10,7 @@ import LayoutWrapper from '@components/LayoutWrapper'
 import siteMetadata from '@data/siteMetadata'
 import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
+import { Toaster } from 'react-hot-toast'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
+      <Toaster />
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
       <LayoutWrapper>

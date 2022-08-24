@@ -1,19 +1,18 @@
-import Comments from '@components/comments'
 import Link from '@components/Link'
 import PageTitle from '@components/PageTitle'
-import ScrollTopAndComment from '@components/ScrollTopAndComment'
 import SectionContainer from '@components/SectionContainer'
 import { BlogSEO } from '@components/SEO'
 import siteMetadata from '@data/siteMetadata'
 import formatDate from '@libs/utils/formatDate'
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+import TOC from '../components/TOC'
+
+export default function PostLayout({ frontMatter, next, prev, children, toc }) {
   const { date, title } = frontMatter
 
   return (
     <SectionContainer>
       <BlogSEO url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
-      <ScrollTopAndComment />
       <article>
         <div>
           <header>
@@ -79,6 +78,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </div>
         </div>
       </article>
+      <TOC tableOfContents={toc} />
     </SectionContainer>
   )
 }

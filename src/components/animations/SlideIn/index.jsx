@@ -32,12 +32,7 @@ const SlideIn = ({ children, reverse }) => {
   })
 
   return (
-    <Waypoint
-      onEnter={() => setInView(true)}
-      onLeave={() => setInView(false)}
-      topOffset={'35%'}
-      bottomOffset={'34%'}
-    >
+    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)} topOffset={'35%'}>
       <animated.div style={transition}>{children}</animated.div>
     </Waypoint>
   )
