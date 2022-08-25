@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
 export default function TOC({ tableOfContents }) {

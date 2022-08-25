@@ -26,7 +26,7 @@ export default function BlogTable({ headers, rows }) {
                     {item.map((item) => (
                       <td
                         key={uuidv4()}
-                        className="min-w-[12rem] whitespace-nowrap p-4 text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800 lg:p-5"
+                        className="whitespace-nowrap p-4 text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800 lg:p-5"
                       >
                         {item}
                       </td>

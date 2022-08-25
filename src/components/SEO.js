@@ -7,6 +7,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   return (
     <Head>
       <title>{title}</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
       <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
@@ -60,6 +61,7 @@ export const TagSEO = ({ title, description }) => {
         twImage={twImageUrl}
       />
       <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="alternate"
           type="application/rss+xml"

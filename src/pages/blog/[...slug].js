@@ -4,7 +4,7 @@ import generateRss from '@libs/generate-rss'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@libs/mdx'
 import fs from 'fs'
 
-const DEFAULT_LAYOUT = 'PostLayout'
+const DEFAULT_LAYOUT = 'PostSimple'
 
 export async function getStaticPaths() {
   const posts = getFiles('blog')

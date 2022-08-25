@@ -4,6 +4,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="scroll-smooth">
         <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
           <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
           <link
             rel="icon"
@@ -24,7 +26,7 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body className=" text-slate-600 antialiased dark:text-slate-300 ">
+        <body className=" text-slate-600 antialiased dark:text-slate-300">
           <Main />
           <NextScript />
         </body>
