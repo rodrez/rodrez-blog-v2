@@ -16,4 +16,10 @@ const slugify = (text) => {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-export { classNames, slugify, wrap }
+const wait = (timeout) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout)
+  })
+}
+
+export { classNames, slugify, wait, wrap }

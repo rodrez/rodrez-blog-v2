@@ -1,17 +1,22 @@
-
-# You are given an integer array nums consisting of n elements, and an integer k.
-
-# Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
-# Input: nums = [1,12,-5,-6,50,3], k = 4
-# Output: 12.75000
-# Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
-
-def findMaxAverage(nums, k):
-    result = sum(nums[0:k-1])
-
-    for i in range(len(nums)):
-        if len(nums[i:k+i]) == k:
-            result = max(result, sum(nums[i:k+i])/k)
+def solution(inputArray):
+    # loop through the array
+    # create left and right pointers (lptr starts at - and rptr starts at 1)
+    # sum the values and check if the value is greater than the total to replace it
+    # if the left pointer is less than the right pointer
+    # set left pointer to right pointer and move right pointer once
     
-    return result
-print(findMaxAverage([5], 1))
+    lptr, rptr = 0, 1
+    total = inputArray[lptr] * inputArray[rptr]
+    
+    while rptr <= len(inputArray) - 1:
+
+        if inputArray[lptr] * inputArray[rptr] > total:
+            total = inputArray[lptr] * inputArray[rptr]
+
+        lptr += 1
+        rptr += 1
+
+    return total
+s = solution([-23, 4, -3, 8, -12])
+
+print(s)
