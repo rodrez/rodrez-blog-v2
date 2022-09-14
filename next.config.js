@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   media-src 'none';
   connect-src *;
   font-src 'self';
-  frame-src giscus.app;
+  frame-src giscus.app onedrive.live.com;
 `
 
 const securityHeaders = [
@@ -59,7 +59,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'utils'],
   },
   images: {
-    domains: ['awv3node-homepage.surge.sh', 'source.unsplash.com'],
+    domains: ['awv3node-homepage.surge.sh', 'source.unsplash.com', 'onedrive.live.com'],
   },
   async headers() {
     return [

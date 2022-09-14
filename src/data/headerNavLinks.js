@@ -3,6 +3,7 @@ const headerNavLinks = [
   // { href: '/DSA', title: 'DSA' },
   // { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
+  { href: '/resume', title: 'Resume' },
 ]
 
 export default headerNavLinks
