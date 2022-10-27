@@ -7,7 +7,7 @@ const projectsData = [
         <p>
           OMS is a centralized web-based system that helps tracking progress and completion of
           training, audits and documentation. OMS also enables visibility when an employee needs to
-          be retrained or requalified.
+          be retrained or re-qualified.
         </p>
         <p>
           Additional features includes but are not limited to reports, dashboards, data exports,
@@ -25,7 +25,7 @@ const projectsData = [
     description: (
       <div className="space-y-2">
         <p>
-          DSA is a blog that series focus on solving and explaining Data Structures and Algorithms.
+          DSA is a blog series that focus on solving and explaining Data Structures and Algorithms.
           We go into depth on topics like Linked Lists, Trees, Graphs, Heaps, etc.
         </p>
         <p>We cover a variety of Blind 75 questions and LeetCode problems.</p>
