@@ -1,12 +1,17 @@
-import 'reactflow/dist/style.css'
+import 'reactflow/dist/base.css'
 
 import { useCallback } from 'react'
-import ReactFlow, { addEdge, Background, useEdgesState, useNodesState } from 'reactflow'
+import ReactFlow, { addEdge, Background, Controls, useEdgesState, useNodesState } from 'reactflow'
 
+import CustomEdge from './CustomEdge'
 import CustomNode from './CustomNode'
 
 const nodeTypes = {
   custom: CustomNode,
+}
+
+const edgeTypes = {
+  custom: CustomEdge,
 }
 
 const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance)
@@ -36,10 +41,12 @@ const TimeComplexityFlow = ({ initialNodes, initialEdges }) => {
       onConnect={onConnect}
       onInit={onInit}
       fitView
-      attributionPosition="top-right"
+      attributionPosition="bottom-left"
       nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
     >
-      <Background color="#aaa" gap={16} />
+      <Background color="#aaa" gap={60} />
+      <Controls />
     </ReactFlow>
   )
 }

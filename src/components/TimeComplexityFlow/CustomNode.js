@@ -14,15 +14,20 @@ const sourceHandleStyleA = {
 //   left: 'auto',
 // }
 
-const CustomNode = ({ data }) => {
+const CustomNode = ({ data, yPos, xPos }) => {
   return (
     <>
       {!data?.start && <Handle type="target" position={Position.Top} />}
-      <div>
+      <div className="relative">
         <div className={data?.bgClass}>
           {data?.icon}
+          {/* {yPos && xPos && (
+            <p className="absolute top-0 right-0 text-xs text-gray-400">
+              {Math.round(xPos).toFixed(2)}, {Math.round(yPos).toFixed(2)}
+            </p>
+          )} */}
           <p className={data.labelClass}>
-            <strong className="ml-3">{data.label}</strong>
+            <span className="ml-3 text-xs">{data.label}</span>
           </p>
         </div>
       </div>
