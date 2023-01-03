@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSmoothStepPath } from 'reactflow'
+import { getSmoothStepPath, getStraightPath } from 'reactflow'
 
 export default function CustomEdge({
   id,
@@ -22,13 +22,22 @@ export default function CustomEdge({
     targetPosition,
   })
 
+  const [straightEdgePath] = getStraightPath({
+    sourceX,
+    sourceY,
+    sourcePosition,
+    targetX,
+    targetY,
+    targetPosition,
+  })
+
   return (
     <>
       <path
         id={id}
         style={style}
-        className={data?.className || ' fill-transparent stroke-amber-600 stroke-2'}
-        d={edgePath}
+        className={data?.className || ' fill-transparent stroke-amber-400 stroke-2'}
+        d={data?.line === 'straight' ? straightEdgePath : edgePath}
         markerEnd={markerEnd}
       />
       <text>

@@ -1,8 +1,9 @@
 import TimeComplexityFlow from '@components/TimeComplexityFlow'
+import { arrayEdges, arrayTimeComplexity } from '@components/TimeComplexityFlow/complexity-data'
 import { AiOutlineFolderView } from 'react-icons/ai'
 import { FaSearch } from 'react-icons/fa'
 import { HiThumbDown } from 'react-icons/hi'
-import { MdDeleteForever, MdMemory } from 'react-icons/md'
+import { MdDeleteForever } from 'react-icons/md'
 import { TiChartLine } from 'react-icons/ti'
 import { VscSymbolArray } from 'react-icons/vsc'
 
@@ -121,6 +122,16 @@ export default function T() {
       position: { x: 710, y: 240 },
       type: 'custom',
     },
+    {
+      id: 'worst',
+      data: {
+        label: 'Worst',
+        icon: <HiThumbDown className="h-4 w-4 fill-amber-600" />,
+        bgClass: 'flex items-center rounded bg-dark-background px-3 py-2',
+      },
+      type: 'custom',
+      position: { x: 512, y: 120 },
+    },
   ]
   const edges = [
     {
@@ -129,7 +140,7 @@ export default function T() {
       target: 'worst',
       type: 'custom',
       data: {
-        className: 'stroke-red-600 stroke-2 fill-transparent',
+        className: 'stroke-amber-600 stroke-2 fill-transparent',
       },
     },
 
@@ -169,7 +180,7 @@ export default function T() {
       target: 'worst_access_time',
       type: 'custom',
       data: {
-        className: 'stroke-red-600 stroke-2 fill-transparent ',
+        className: 'stroke-amber-600 stroke-2 fill-transparent ',
       },
     },
     {
@@ -178,7 +189,7 @@ export default function T() {
       target: 'worst_search_time',
       type: 'custom',
       data: {
-        className: 'stroke-red-600 stroke-2 fill-transparent ',
+        className: 'stroke-amber-600 stroke-2 fill-transparent ',
       },
     },
     {
@@ -187,7 +198,7 @@ export default function T() {
       target: 'worst_insertion_time',
       type: 'custom',
       data: {
-        className: 'stroke-red-600 stroke-2 fill-transparent ',
+        className: 'stroke-amber-600 stroke-2 fill-transparent ',
       },
     },
     {
@@ -196,13 +207,16 @@ export default function T() {
       target: 'worst_deletion_time',
       type: 'custom',
       data: {
-        className: 'stroke-red-600 stroke-2 fill-transparent ',
+        className: 'stroke-amber-600 stroke-2 fill-transparent ',
       },
     },
   ]
   return (
     <div className="h-[40vh] w-[70vw]">
-      <TimeComplexityFlow initialNodes={nodes} initialEdges={edges} />
+      <TimeComplexityFlow
+        initialNodes={[...nodes, ...arrayTimeComplexity]}
+        initialEdges={[...edges, ...arrayEdges]}
+      />
     </div>
   )
 }

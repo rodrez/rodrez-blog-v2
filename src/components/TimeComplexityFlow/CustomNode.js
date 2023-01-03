@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { memo } from 'react'
 import { Handle, Position } from 'reactflow'
 
@@ -20,14 +21,14 @@ const CustomNode = ({ data, yPos, xPos }) => {
       {!data?.start && <Handle type="target" position={Position.Top} />}
       <div className="relative">
         <div className={data?.bgClass}>
-          {data?.icon}
-          {/* {yPos && xPos && (
-            <p className="absolute top-0 right-0 text-xs text-gray-400">
-              {Math.round(xPos).toFixed(2)}, {Math.round(yPos).toFixed(2)}
-            </p>
-          )} */}
+          {data.icon && data?.icon}
+          {/* {yPos && xPos && ( */}
+          {/*   <p className="absolute top-0 right-0 text-xs text-gray-400"> */}
+          {/*     {Math.round(xPos).toFixed(2)}, {Math.round(yPos).toFixed(2)} */}
+          {/*   </p> */}
+          {/* )} */}
           <p className={data.labelClass}>
-            <span className="ml-3 text-xs">{data.label}</span>
+            <span className={clsx(data.icon && 'ml-3', 'text-xs')}>{data.label}</span>
           </p>
         </div>
       </div>
