@@ -12,35 +12,36 @@ export const skills = {
   React: {
     icon: ReactJsIcon,
     description:
-      'Proficient in React. Knowledgeable of hooks, components, and state management. Built multiple projects with React.',
+      '3+ Years. I have experience building and maintaining user interfaces using the components and hooks provided by the library, as well as integrating React with other technologies such as Zustand and GraphQL.',
   },
   JavaScript: {
     icon: JavascriptIcon,
-    description: 'Proficient in JavaScript. Knowledgeable of ES6. 2+ years of experience JS.',
+    description:
+      'I have experience building front-end user interfaces and back-end server-side logic using the language, as well as integrating with a range of APIs and databases. ',
   },
   Python: {
     icon: PythonIcon,
     description:
-      'Proficient in Python. 3+ years of experience with Python. Familiar with Pandas, NumPy, and SciPy.',
+      'I have experience building standalone scripts as well as web applications using frameworks such as Django. I have work with a range of data types and structures, including working with large datasets and using libraries such as Pandas for data analysis and manipulation.',
   },
   Django: {
     icon: DjangoIcon,
     description:
-      'Proficient in Django and Django Rest Framework. Familiar with the MVC architecture. Built multiple backends with Django.',
+      'I have approximately 3 years of experience working with Django, including experience with the Django Rest Framework (DRF). I have also used DRF to build REST APIs for use in web and mobile applications. ',
   },
   TypeScript: {
     icon: TypescriptIcon,
     description:
-      'Familiar with TypeScript. Just started using it. Currently learning how to use it.',
+      'I have a basic understanding of its syntax and features, including the use of interfaces, classes, and type annotations to improve the type safety and readability of my code. I have also used TypeScript in conjunction with Prisma and gRPC to build server-side applications.',
   },
   NextJS: {
     icon: NextJSIcon,
     description:
-      'Proficient in NextJS. Knowledgeable of SSR, CSR, and SSG. 2+ years of experience with NextJS. Built multiple projects with NextJS.',
+      'I have some experience with Next.js, a framework for building server-rendered or statically-exported React apps. I have used Next.js in a few personal and professional projects, and have a strong understanding of its core features, including automatic code splitting, optimized performance, and server-side rendering.',
   },
   Tailwind: {
     icon: TailwindIcon,
     description:
-      'Proficient with TailwindCSS. Currently learning how to use it. Built multiple projects with TailwindCSS.',
+      'I have experience with Tailwind CSS, a utility-based CSS framework. I have used Tailwind in a few personal and professional projects, and have a strong understanding of its key concepts, including the use of utility classes and the creation of custom design systems. ',
   },
 }

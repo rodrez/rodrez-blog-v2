@@ -74,6 +74,6 @@ export const languages = {
 }
 
 export const technologies = {
-  proficient: ['VS Code', 'PyCharm', 'Git', 'Unix'],
-  familiar: ['VIM', 'Docker', 'Intellij'],
+  proficient: ['VS Code', 'PyCharm', 'Git', 'Unix', 'VIM'],
+  familiar: ['Docker', 'Intellij'],
 }
