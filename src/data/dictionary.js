@@ -1,20 +1,11 @@
----
-title: DSA Linear Time
-date: '2022-12-23'
-tags: ['dsa', 'dictionary']
-draft: false
-summary: Simple explanation of linear time
-images: []
-layout: PostSimple
-canonicalUrl: linear-time
----
-
-# So what is linear time in Data Structures and Algorithms
-
+export const dictionary = {
+  Linear_Time: `
 Linear time, or O(n) time, refers to an algorithm or operation that takes a time proportional to the size of the input. In other words, if the size of the input is doubled, the time taken by the algorithm or operation will also be roughly doubled.
-
 For example, consider an algorithm that processes a list of numbers. If the list has 10 numbers, the algorithm might take 1 second to run. If the list has 20 numbers, the algorithm might take 2 seconds to run. If the list has 100 numbers, the algorithm might take 10 seconds to run. In each case, the time taken by the algorithm is roughly proportional to the size of the input (i.e., the number of numbers in the list).
-
 Linear time is generally considered to be efficient for algorithms that process small inputs, but can become impractical for very large inputs. For example, if an algorithm takes 1 second to process a list of 10 numbers, it might take 100 seconds to process a list of 1000 numbers. In this case, the algorithm would be considered to have a slow (linear) time complexity.
-
 There are other time complexities that are faster than linear time, such as constant time (O(1)) and logarithmic time (O(log n)). There are also time complexities that are slower than linear time, such as quadratic time (O(n^2)) and exponential time (O(2^n)).
+`,
+  Constant_Time: `Constant time, or O(1) time, refers to an algorithm or operation that takes a fixed amount of time to run, regardless of the size of the input. In other words, the time taken by the algorithm or operation is not dependent on the size of the input.
+For example, consider an algorithm that retrieves the first element of a list. This operation will take the same amount of time to run regardless of the size of the list. If the list has 10 elements, it will take the same amount of time to retrieve the first element as it will if the list has 1000 elements.
+Constant time is generally considered to be very efficient, since the time taken by the algorithm or operation does not increase as the size of the input grows. This makes constant time algorithms and operations a good choice for situations where you need to access a specific element of a collection quickly, or where you need to perform a simple operation on a collection without worrying about the size of the collection.`,
+}

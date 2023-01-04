@@ -22,7 +22,7 @@ const CustomNode = ({ data, yPos, xPos }) => {
       <div className="">
         <div
           className={clsx(
-            'flex h-12 w-28 items-center justify-between rounded bg-dark-background px-3',
+            'flex h-12 w-28 items-center justify-between rounded px-3 shadow-md dark:bg-dark-background',
             data?.bgClass
           )}
         >

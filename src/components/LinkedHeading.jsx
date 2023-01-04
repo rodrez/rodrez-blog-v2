@@ -48,7 +48,7 @@ const LinkedHeading = ({ children, fontSize }) => {
           <FaLink className="mr-2 text-xl" />
         </a>
       )}
-      <span className="text-primary-400 ">{children}</span>
+      <span className="text-primary-600 dark:text-primary-400">{children}</span>
     </h2>
   )
 }

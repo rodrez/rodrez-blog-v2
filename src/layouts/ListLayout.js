@@ -19,54 +19,50 @@ const BlogCard = ({ post }) => {
   })
 
   return (
-    <animated.li
-      style={style}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      key={slug}
-      className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
-    >
-      {/* Border Animations */}
-      <AnimatedBorder toggle={isHovered} />
+    <Link href={`/blog/${slug}`} className="">
+      <animated.li
+        style={style}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        key={slug}
+        className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
+      >
+        {/* Border Animations */}
+        <AnimatedBorder toggle={isHovered} />
 
-      <article className="flex flex-col space-y-2 xl:items-baseline xl:space-y-0">
-        <dl>
-          <dt className="sr-only">Published on</dt>
-          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-            <time dateTime={date}>{formatDate(date)}</time>
-          </dd>
-        </dl>
-        <div className="space-y-3 xl:col-span-3">
-          <div>
-            <h3
-              className={classNames(
-                'relative z-10 text-2xl font-bold leading-8 tracking-tight',
-                isHovered && 'text-amber-600 dark:text-amber-400 '
-              )}
-            >
-              <Link href={`/blog/${slug}`} className="">
+        <article className="flex flex-col space-y-2 xl:items-baseline xl:space-y-0">
+          <dl>
+            <dt className="sr-only">Published on</dt>
+            <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+              <time dateTime={date}>{formatDate(date)}</time>
+            </dd>
+          </dl>
+          <div className="space-y-3 xl:col-span-3">
+            <div>
+              <h3
+                className={classNames(
+                  'relative z-10 text-2xl font-bold leading-8 tracking-tight',
+                  isHovered && 'text-amber-600 dark:text-amber-400 '
+                )}
+              >
                 {title}
-              </Link>
-            </h3>
-            <div className="relative z-10 flex flex-wrap">
-              {tags.map((tag) => (
-                <Tag key={tag} text={tag} />
-              ))}
+              </h3>
+              <div className="relative z-10 flex flex-wrap">
+                {tags.map((tag) => (
+                  <Tag key={tag} text={tag} />
+                ))}
+              </div>
+            </div>
+            <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
+              {summary}
             </div>
           </div>
-          <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
-            {summary}
-          </div>
-        </div>
-      </article>
-      <button className="absolute right-4 bottom-4 z-10">
-        {isHovered && (
-          <Link href={`/blog/${slug}`} className="">
-            <TrailingArrows toggle={isHovered} />
-          </Link>
-        )}
-      </button>
-    </animated.li>
+        </article>
+        <button className="absolute right-4 bottom-4 z-10">
+          {isHovered && <TrailingArrows toggle={isHovered} />}
+        </button>
+      </animated.li>
+    </Link>
   )
 }
 
