@@ -6,6 +6,7 @@ import CoolText from '@components/blogComponents/CoolText'
 import HoverMe from '@components/blogComponents/HoverMe'
 import BlogTable from '@components/blogComponents/Table'
 import ImageWithSource from '@components/Image/WithSource'
+import TimeComplexityFlow from '@components/TimeComplexityFlow'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useMemo } from 'react'
 
@@ -30,6 +31,7 @@ export const MDXComponents = {
   ImageWithSource,
   Indexing,
   CodeSnippet,
+  TimeComplexityFlow,
   h1: ({ children }) => <LinkedHeading fontSize={'text-3xl'}>{children}</LinkedHeading>,
   h2: ({ children }) => <LinkedHeading fontSize={'text-2xl'}>{children}</LinkedHeading>,
   wrapper: ({ components, layout, ...rest }) => {

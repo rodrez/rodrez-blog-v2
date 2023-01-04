@@ -1,0 +1,96 @@
+---
+title: Arrays
+date: '2023-01-04'
+tags: ['data structures']
+draft: false
+summary: Arrays as a data structure. We will learn about operations complexity and more.
+images: []
+layout: PostSimple
+canonicalUrl: arrays-as-a-data-structure
+---
+
+## What is an array?
+
+An array is a collection of items stored in a contiguous block of memory. Arrays are indexed, which means that each element can be accessed by its position in the array. Arrays are useful for storing and manipulating a fixed-size sequence of elements.
+
+## Pros:
+
+- Arrays are easy to use and implement.
+- Arrays have fast lookup time (O(1)) since items are stored in contiguous memory and can be accessed directly using their index.
+- Arrays have fast insertion and deletion time (O(1)) if you are inserting/deleting items at the end of the array.
+
+## Cons:
+
+- The size of an array is fixed, so you need to specify the size of the array when you declare it. This can be inflexible and waste memory if you don't know how many items you will be storing in the array.
+- Inserting or deleting items from the middle of the array is slower (O(n)) because you need to shift the items after the insertion/deletion point to make room for the new item or close the gap left by the deleted item.
+- Arrays are not suitable for storing large amounts of data because they can become slow and consume a lot of memory.
+
+## Time Complexity:
+
+The time complexity of different operations on arrays depends on the specific operation being performed and the size of the array. Here is a summary of the time complexity of common operations on arrays:
+
+<div class="h-[40vh] w-full">
+  <TimeComplexityFlow
+    access_time="O(1)"
+    search_time="O(n)"
+    insertion_time="O(n)"
+    deletion_time="O(n)"
+  />
+</div>
+
+In general, operations that involve accessing or modifying a single element in the array have constant time complexity (O(1)), while operations that involve inserting or deleting elements from the beginning or middle of the array have linear time complexity (O(n)).
+
+It's worth noting that the time complexity of some operations on arrays can be improved by using more advanced data structures such as linked lists, which are optimized for inserting and deleting elements.
+
+### Real World Use Examples:
+
+- Storing and manipulating tabular data: Arrays are often used to store and manipulate tabular data, such as the data in a spreadsheet or database. For example, a database table might use an array to store rows of data, where each element in the array represents a different column in the table.
+- Implementing other data structures: Arrays are often used as the underlying data structure for other data structures, such as stacks, queues, and heaps.
+- Storing images: Digital images are often stored as two-dimensional arrays, with each element in the array representing the color of a pixel in the image.
+- Storing and manipulating matrices: Matrices, which are used in mathematics and computer graphics, can be implemented as two-dimensional arrays.
+- Storing and manipulating strings: Strings, which are sequences of characters, can be implemented as arrays of characters.
+
+### Python Implementation:
+
+In Python, it is not necessary to implement an array from scratch, as Python provides a built-in list data type that can be used as an array. However, if you want to implement an array-like data structure from scratch, you can do so using the following steps:
+
+Define a class for the array data structure. The class should have a field for storing the data and a field for storing the size of the array.
+
+Implement a method for initializing the array. This method should allocate memory for the array and set the size field to the desired size.
+
+Implement methods for inserting and deleting elements from the array. These methods should shift the elements of the array as necessary to make room for new elements or to fill in the gap left by deleted elements.
+
+Implement a method for accessing the elements of the array. This method should take an index as an argument and return the element at that index.
+
+Here is an example of how you might implement an array class in Python:
+
+```python
+class Array:
+    def __init__(self, size):
+        self.data = [None] * size
+        self.size = size
+        self.capacity = size
+
+    def insert(self, index, element):
+        if index < 0 or index >= self.size:
+            raise IndexError('Index out of bounds')
+
+        if self.size == self.capacity:
+            # Double the size of the array
+            self.capacity *= 2
+            new_data = [None] * self.capacity
+            for i in range(self.size):
+                new_data[i] = self.data[i]
+
+    def delete(self, index):
+        if index < 0 or index >= self.size:
+            raise IndexError('Index out of bounds')
+        self.data[index] = None
+
+    def get(self, index):
+        if index < 0 or index >= self.size:
+            raise IndexError('Index out of bounds')
+        return self.data[index]
+```
+
+This array class provides a basic implementation of an array, with methods for inserting, deleting, and accessing elements. You can add additional methods as needed for your specific use case.

@@ -4,7 +4,7 @@ import { Handle, Position } from 'reactflow'
 
 const sourceHandleStyleA = {
   width: '24px',
-  height: '12px',
+  height: '10px',
   borderRadius: '3px',
   border: 'none',
   marginTop: '4px',
@@ -19,27 +19,33 @@ const CustomNode = ({ data, yPos, xPos }) => {
   return (
     <>
       {!data?.start && <Handle type="target" position={Position.Top} />}
-      <div className="relative">
-        <div className={data?.bgClass}>
+      <div className="">
+        <div
+          className={clsx(
+            'flex h-12 w-28 items-center justify-between rounded bg-dark-background px-3',
+            data?.bgClass
+          )}
+        >
           {data.icon && data?.icon}
           {/* {yPos && xPos && ( */}
           {/*   <p className="absolute top-0 right-0 text-xs text-gray-400"> */}
           {/*     {Math.round(xPos).toFixed(2)}, {Math.round(yPos).toFixed(2)} */}
           {/*   </p> */}
           {/* )} */}
-          <p className={data.labelClass}>
-            <span className={clsx(data.icon && 'ml-3', 'text-xs')}>{data.label}</span>
+          <p className={clsx('w-full text-center', data.labelClass)}>
+            <span className={clsx('text-xs')}>{data.label}</span>
           </p>
         </div>
       </div>
-
-      <Handle
-        type="source"
-        className="mt-1"
-        position={Position.Bottom}
-        id="a"
-        style={sourceHandleStyleA}
-      />
+      {!data?.last ? (
+        <Handle
+          type="source"
+          className="mt-1"
+          position={Position.Bottom}
+          id="a"
+          style={sourceHandleStyleA}
+        />
+      ) : null}
       {/* <Handle type="source" position={Position.Bottom} id="b" style={sourceHandleStyleB} /> */}
     </>
   )

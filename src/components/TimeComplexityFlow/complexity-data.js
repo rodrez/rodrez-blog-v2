@@ -1,41 +1,49 @@
-const arrayTimeComplexity = [
-  {
-    id: 'average_access_time_complexity',
-    data: {
-      label: 'O(1)',
-      bgClass: 'flex items-center rounded bg-dark-background px-3 py-2',
+const generateNodes = (access_time, search_time, insertion_time, deletion_time) => {
+  const labelClass = {}
+  const y = 170
+  return [
+    {
+      id: 'average_access_time_complexity',
+      data: {
+        label: access_time,
+        labelClass: '',
+        last: true,
+      },
+      type: 'custom',
+      position: { x: -236, y: y },
     },
-    type: 'custom',
-    position: { x: -217, y: 320 },
-  },
-  {
-    id: 'average_search_time_complexity',
-    data: {
-      label: 'O(n)',
-      bgClass: 'flex items-center rounded bg-dark-background px-3 py-2',
+    {
+      id: 'average_search_time_complexity',
+      data: {
+        label: search_time,
+        labelClass: '',
+        last: true,
+      },
+      position: { x: -112, y: y },
+      type: 'custom',
     },
-    position: { x: -99, y: 320 },
-    type: 'custom',
-  },
-  {
-    id: 'average_insertion_time_complexity',
-    data: {
-      label: 'O(n)',
-      bgClass: 'flex items-center rounded bg-dark-background px-3 py-2',
+    {
+      id: 'average_insertion_time_complexity',
+      data: {
+        label: insertion_time,
+        labelClass: '',
+        last: true,
+      },
+      position: { x: 12, y: y },
+      type: 'custom',
     },
-    position: { x: 23, y: 320 },
-    type: 'custom',
-  },
-  {
-    id: 'average_deletion_time_complexity',
-    data: {
-      label: 'O(n)',
-      bgClass: 'flex items-center rounded bg-dark-background px-3 py-2',
+    {
+      id: 'average_deletion_time_complexity',
+      data: {
+        label: deletion_time,
+        labelClass: '',
+        last: true,
+      },
+      position: { x: 138, y: y },
+      type: 'custom',
     },
-    position: { x: 149, y: 320 },
-    type: 'custom',
-  },
-]
+  ]
+}
 
 const arrayEdges = [
   {
@@ -73,5 +81,4 @@ const arrayEdges = [
     },
   },
 ]
-
-export { arrayEdges, arrayTimeComplexity }
+export { arrayEdges, generateNodes }
