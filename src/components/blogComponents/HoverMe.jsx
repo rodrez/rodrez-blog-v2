@@ -68,17 +68,17 @@ export default function HoverMe({ children, meaning, elementId }) {
 
   return (
     <span
-      className="relative inline-block"
+      className="relative -my-0 mx-2 inline-flex"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
       onClick={() => setShow(!show)}
     >
       <span className="font-bold text-r-purple dark:text-light-green"> {children}</span>
-      <span className="font-bold text-primary-500">*</span>
+      <span className="absolute right-0 font-bold text-primary-500">*</span> &nbsp;&nbsp;
       <animated.div
         id={elementId}
         style={{ ...props }}
-        className="absolute z-50 w-32 rounded-lg bg-dark-cover p-2 text-xs text-white shadow-md"
+        className="absolute top-6 z-50 w-32 rounded-lg bg-dark-cover p-2 text-xs text-white shadow-md"
       >
         {meaning}
       </animated.div>
