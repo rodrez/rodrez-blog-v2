@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
 
+import { FadeInDownComponent } from './animations/FadeInDown'
+
 const Pre = (props) => {
   const textInput = useRef(null)
   const [hovered, setHovered] = useState(false)
@@ -57,7 +59,7 @@ const Pre = (props) => {
             )}
           </svg>
 
-          {copied ? <small>Copied</small> : null}
+          <FadeInDownComponent show={copied} text="copied" textClass={'text-xs text-green-500'} />
         </button>
       )}
 
