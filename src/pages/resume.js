@@ -37,10 +37,11 @@ function Resume() {
         </div>
         <div className="text-left lg:text-right">
           <p>fabian.rodrez@gmail.com</p>
-          <Link href={'https://www.linkedin.com/in/f-rodrez/'}>
-            <a className="text-primary-600 dark:text-primary-400">
-              https://www.linkedin.com/in/f-rodrez/
-            </a>
+          <Link
+            className="text-primary-600 dark:text-primary-400"
+            href={'https://www.linkedin.com/in/f-rodrez/'}
+          >
+            https://www.linkedin.com/in/f-rodrez/
           </Link>
         </div>
       </div>
@@ -104,8 +105,8 @@ function Resume() {
             return (
               <div key={exp.name}>
                 <p className="font-bold leading-7">
-                  <Link href={exp.href}>
-                    <a className="text-primary-600  dark:text-primary-400">{exp.name}</a>
+                  <Link className="text-primary-600  dark:text-primary-400" href={exp.href}>
+                    {exp.name}
                   </Link>{' '}
                   - {exp.date}
                 </p>

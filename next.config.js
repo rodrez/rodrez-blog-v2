@@ -59,7 +59,12 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'utils'],
   },
   images: {
-    domains: ['awv3node-homepage.surge.sh', 'source.unsplash.com', 'onedrive.live.com'],
+    domains: [
+      'awv3node-homepage.surge.sh',
+      'source.unsplash.com',
+      'onedrive.live.com',
+      'unyth.b-cdn.net',
+    ],
   },
   async headers() {
     return [

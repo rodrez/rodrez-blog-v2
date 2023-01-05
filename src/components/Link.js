@@ -21,9 +21,7 @@ const CustomLink = ({ href, ...rest }) => {
         onMouseLeave={() => setIsHovered(false)}
         className="mr-2 inline-block"
       >
-        <Link href={href}>
-          <a ref={ref} className="text-primary-600 dark:text-primary-400" {...rest} />
-        </Link>
+        <Link href={href} ref={ref} className="text-primary-600 dark:text-primary-400" {...rest} />
         <animated.div className="h-0.5 bg-primary-600 dark:bg-primary-400" style={width} />
       </div>
     )

@@ -11,12 +11,25 @@ canonicalUrl: arrays-as-a-data-structure
 
 ## What is an array?
 
-An array is a collection of items stored in a contiguous block of memory. Arrays are indexed, which means that each element can be accessed by its position in the array. Arrays are useful for storing and manipulating a fixed-size sequence of elements.
+An array is a data structure that stores values in a single place. It's important to note that these values are stored in a specific order.
+
+To understand how arrays work, we can think of them as a group of boxes labeled with a number. Each box(or "element") in the array has a specific number (or "index") associated with it, starting at 0. So, the first element in the array is at index 0; the second is at index 1, and so on.
+
+We can think of the array as a way of "associating" a value with a specific index. For example, if we had a list of names and we wanted to store the name "Alice" at the first index(0), we would say something like "the name at index 0 is Alice". This is similar to how we might associate a person's name with their phone number in our contacts.
+
+Arrays are helpful because they allow you to store and access many values in a single place and provide a way to organize and manipulate this data efficiently. They are used in many different programs and are a fundamental part of computer science.
 
 ## Pros:
 
 - Arrays are easy to use and implement.
-- Arrays have fast lookup time (O(1)) since items are stored in contiguous memory and can be accessed directly using their index.
+- Arrays have fast lookup time
+  <HoverMe
+    meaning={
+      'The efficiency of the lookup will not be affected by how many items are inside the array.'
+    }
+  >
+    (O(1)){' '}
+  </HoverMe> since items are stored in contiguous memory and can be accessed directly using their index.
 - Arrays have fast insertion and deletion time (O(1)) if you are inserting/deleting items at the end of the array.
 
 ## Cons:

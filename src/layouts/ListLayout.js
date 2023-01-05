@@ -19,14 +19,14 @@ const BlogCard = ({ post }) => {
   })
 
   return (
-    <Link href={`/blog/${slug}`} className="">
-      <animated.li
-        style={style}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        key={slug}
-        className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
-      >
+    <animated.li
+      style={style}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      key={slug}
+      className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
+    >
+      <Link href={`/blog/${slug}`} className="">
         {/* Border Animations */}
         <AnimatedBorder toggle={isHovered} />
 
@@ -61,8 +61,8 @@ const BlogCard = ({ post }) => {
         <button className="absolute right-4 bottom-4 z-10">
           {isHovered && <TrailingArrows toggle={isHovered} />}
         </button>
-      </animated.li>
-    </Link>
+      </Link>
+    </animated.li>
   )
 }
 
