@@ -1,4 +1,4 @@
-import { animated, config, useSpring } from '@react-spring/web'
+import { animated, config, useInView, useSpring } from '@react-spring/web'
 import { useEffect, useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 

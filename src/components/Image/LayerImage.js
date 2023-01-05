@@ -1,5 +1,5 @@
+import Image from '@components/Image'
 import { animated, useSpring } from '@react-spring/web'
-import NextImage from 'next/image'
 import { useState } from 'react'
 
 // eslint-disable-next-line jsx-a11y/alt-text
@@ -18,7 +18,7 @@ const LayerImage = ({ size, ...rest }) => {
       className="h-full w-full bg-primary-400"
     >
       <animated.div style={{ opacity }}>
-        <NextImage {...rest} height={size} width={size} alt="test" layout="fill" />
+        <Image {...rest} alt="test" />
       </animated.div>
     </div>
   )

@@ -1,6 +1,7 @@
 import siteMetadata from '@data/siteMetadata'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
   const router = useRouter()
@@ -10,6 +11,8 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
+      <meta name="author" content="Rodrez" />
+      <meta name="keywords" content="Software Engineering, Data Structures, Algorithms" />
       <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteMetadata.title} />
@@ -152,13 +155,15 @@ export const BlogSEO = ({
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
         {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData, null, 2),
-          }}
-        />
+        <script />
       </Head>
+      <Script
+        type="application/ld+json"
+        id="data-ld-json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData, null, 2),
+        }}
+      />
     </>
   )
 }
