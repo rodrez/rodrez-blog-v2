@@ -15,7 +15,7 @@ const projectsData = [
         </p>
       </div>
     ),
-    stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    stack: 'NextJS, Zustand, Django, DRF, Postgres, Tailwind, Cypress, Docker',
     imgSrc: '/static/images/projects/next-oms.png',
     href: '',
   },
@@ -31,7 +31,7 @@ const projectsData = [
         <p>We cover a variety of Blind 75 questions and LeetCode problems.</p>
       </div>
     ),
-    stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    stack: 'NextJS, Zustand, Tailwind, Cypress, MDX',
     imageSrc: '/static/images/projects/mythus.png',
     href: '/static/images/projects/',
   },
@@ -44,7 +44,7 @@ const projectsData = [
         skills you need to get the job.
       </div>
     ),
-    stack: 'React, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    stack: 'Next, tRPC, Prisma, Postgres, Tailwind, NextAuth, Docker',
     image: '/static/images/projects/mythus.png',
     link: 'https://mythus.netlify.app/',
   },
@@ -56,7 +56,7 @@ const projectsData = [
         Aracadefi is a web application for tracking and managing games based on crypto currencies.
       </div>
     ),
-    stack: 'React, Redux, Node, Express, MongoDB, Material UI, Jest, Enzyme',
+    stack: 'React, Redux, Node, Express, MongoDB, Tailwind, Jest',
     image: 'aracadefi.png',
     link: 'https://aracadefi.netlify.app/',
   },
