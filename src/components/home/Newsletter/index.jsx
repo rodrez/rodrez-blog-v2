@@ -128,7 +128,7 @@ export default function Newsletter() {
                   <div className="mt-4 sm:mt-0 sm:ml-3">
                     <button
                       type="submit"
-                      className="bg-px-5 block w-full rounded-md border border-transparent py-3 text-base font-medium text-white shadow hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-400 sm:px-10"
+                      className="bg-px-5 block w-full rounded-md border border-transparent bg-dark-blue py-3 text-base font-medium text-white shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-400 sm:px-10"
                     >
                       Notify Me
                     </button>
