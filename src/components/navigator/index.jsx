@@ -1,5 +1,5 @@
+import { animated, config, useTrail } from '@react-spring/web'
 import React from 'react'
-import { animated, config, useTrail } from 'react-spring'
 const items = [
   'M0.75 6H11.25 M6 0.75L11.25 6L6 11.25',
   '"M15 10L19.5 5.5L15 1',

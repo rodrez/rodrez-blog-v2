@@ -1,5 +1,5 @@
+import { animated, useSpring } from '@react-spring/web'
 import * as React from 'react'
-import { animated, useSpring } from 'react-spring'
 
 export const defaultProperties = {
   dark: {

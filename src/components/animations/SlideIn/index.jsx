@@ -1,6 +1,6 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { animated, config, useSpring } from 'react-spring'
 import { Waypoint } from 'react-waypoint'
 
 const SlideIn = ({ children, reverse }) => {

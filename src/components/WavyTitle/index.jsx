@@ -1,5 +1,5 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import { useState } from 'react'
-import { animated, config, useSpring } from 'react-spring'
 
 export default function WavyTitle() {
   const [isHovered, setIsHovered] = useState(false)

@@ -1,4 +1,4 @@
-import { animated } from 'react-spring'
+import { animated } from '@react-spring/web'
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },

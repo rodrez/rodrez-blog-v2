@@ -1,6 +1,6 @@
+import { animated, useSpring } from '@react-spring/web'
 import NextImage from 'next/image'
 import { useState } from 'react'
-import { animated, useSpring } from 'react-spring'
 
 // eslint-disable-next-line jsx-a11y/alt-text
 const LayerImage = ({ size, ...rest }) => {

@@ -1,5 +1,5 @@
+import { animated, useSpring } from '@react-spring/web'
 import React from 'react'
-import { animated, useSpring } from 'react-spring'
 
 export const MoonIcon = ({ className, onClick }) => {
   const pathStyle = useSpring({

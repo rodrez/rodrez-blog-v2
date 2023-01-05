@@ -1,6 +1,6 @@
+import { animated } from '@react-spring/web'
 import { useTheme } from 'next-themes'
 import React from 'react'
-import { animated } from 'react-spring'
 
 const HeroImage = ({ className }) => {
   const { resolvedTheme } = useTheme()

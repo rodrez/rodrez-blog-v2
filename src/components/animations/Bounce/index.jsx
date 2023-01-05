@@ -1,4 +1,4 @@
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring } from '@react-spring/web'
 
 const BounceWrapper = ({
   delay = 1000,

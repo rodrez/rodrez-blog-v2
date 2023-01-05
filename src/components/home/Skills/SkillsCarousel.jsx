@@ -1,7 +1,7 @@
+import { animated } from '@react-spring/web'
 import { wrap } from '@utils/general'
 import React, { useState } from 'react'
 import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
-import { animated } from 'react-spring'
 import { useSpringCarousel } from 'react-spring-carousel'
 
 import { skills } from './constants'

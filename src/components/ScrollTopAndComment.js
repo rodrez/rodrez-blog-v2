@@ -1,5 +1,4 @@
 import { useScrollTo } from '@hooks/useScrollTo'
-import { config, useSpring } from 'react-spring'
 
 const ScrollTopAndComment = () => {
   const { scrollTo } = useScrollTo()

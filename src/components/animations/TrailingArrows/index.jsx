@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { animated, config, useTransition } from 'react-spring'
+import { animated, useTransition } from '@react-spring/web'
 
 const pathOne = `M0.75 6H11.25 M6 0.75L11.25 6L6 11.25`
 const pathTwo = `M15 10L19.5 5.5L15 1`

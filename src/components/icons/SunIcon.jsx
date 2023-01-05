@@ -1,4 +1,4 @@
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring } from '@react-spring/web'
 
 export const SunIconV2 = ({ className, onClick }) => {
   // const whileTap = { scale: 0.95, rotate: 15 }

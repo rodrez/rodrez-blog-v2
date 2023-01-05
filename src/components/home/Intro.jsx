@@ -1,5 +1,5 @@
+import { animated, config, useTransition } from '@react-spring/web'
 import Link from 'next/link'
-import { animated, config, useTransition } from 'react-spring'
 
 // Elements
 const Title = () => (

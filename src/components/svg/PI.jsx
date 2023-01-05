@@ -1,5 +1,5 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import React from 'react'
-import { animated, config, useSpring } from 'react-spring'
 
 const AnimatedG = ({ delay = 1000, duration = 2000, children, reverse = false, x }) => {
   const subtleBounce = useSpring({

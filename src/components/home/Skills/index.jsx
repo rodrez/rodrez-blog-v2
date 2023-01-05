@@ -1,7 +1,7 @@
 import FadeIn from '@components/animations/FadeIn'
+import { animated } from '@react-spring/web'
 import { classNames } from '@utils/general'
 import React, { useState } from 'react'
-import { animated } from 'react-spring'
 
 import ScaleIn from '../../animations/ScaleIn'
 import { skills } from './constants'

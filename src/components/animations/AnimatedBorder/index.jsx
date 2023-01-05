@@ -1,5 +1,5 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import { useEffect, useRef, useState } from 'react'
-import { animated, config, useSpring } from 'react-spring'
 
 export default function AnimatedBorder({ toggle = false }) {
   //   chain an animation for each side starting from the top left corner

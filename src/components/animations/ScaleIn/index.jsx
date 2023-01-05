@@ -1,5 +1,5 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import { useEffect, useState } from 'react'
-import { animated, config, useSpring } from 'react-spring'
 import { Waypoint } from 'react-waypoint'
 
 const ScaleIn = ({ children, delay, duration, reverse, ...props }) => {

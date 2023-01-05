@@ -1,5 +1,5 @@
+import { animated, useSpring } from '@react-spring/web'
 import React from 'react'
-import { animated, useSpring } from 'react-spring'
 
 export default function HoverMe({ children, meaning, elementId }) {
   const [show, setShow] = React.useState(false)

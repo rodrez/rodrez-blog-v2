@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
+import { animated, useSpring } from '@react-spring/web'
 import Link from 'next/link'
 import { useState } from 'react'
-import { animated, useSpring } from 'react-spring'
 import useMeasure from 'react-use-measure'
 
 const CustomLink = ({ href, ...rest }) => {
