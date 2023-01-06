@@ -32,19 +32,19 @@ const GetInTouch = () => (
 export default function Intro() {
   const components = [
     {
-      component: <Title />,
+      component: Title,
       // slide from the left
       from: { opacity: 0, x: '-100%' },
       key: 'title',
     },
     {
-      component: <AboutMe />,
+      component: AboutMe,
       // slide from the right
       from: { opacity: 0, x: '100%' },
       key: 'aboutme',
     },
     {
-      component: <GetInTouch />,
+      component: GetInTouch,
       // slide from the bottom
       from: { opacity: 0, x: '100%' },
       key: 'getintouch',
@@ -56,15 +56,14 @@ export default function Intro() {
     trail: 500,
     from: (item) => item.from,
     enter: { opacity: 1, x: '0%' },
-    leave: { opacity: 1 },
     config: config.molasses,
   })
 
   return (
     <animated.div className={'z-10 order-2 w-full lg:order-1'}>
       {transitions((style, item) => (
-        <animated.div key={item} style={style}>
-          {item.component}
+        <animated.div style={style}>
+          <item.component />
         </animated.div>
       ))}
     </animated.div>

@@ -53,10 +53,11 @@ const SingleProject = ({ project, index }) => {
           ))}
         </div>
         {/* <GradientBorder> */}
-        <Link href={project.url} passHref>
-          <button className="rounded border-2 border-primary-600 py-1 px-2 text-xl font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400 md:ml-0 md:mr-auto lg:mr-auto lg:ml-auto xl:px-12">
-            Learn More
-          </button>
+        <Link
+          href={project.url}
+          className="rounded border-2 border-primary-600 py-1 px-2 text-xl font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400 md:ml-0 md:mr-auto lg:mr-auto lg:ml-auto xl:px-12"
+        >
+          Learn More
         </Link>
         {/* </GradientBorder> */}
       </div>

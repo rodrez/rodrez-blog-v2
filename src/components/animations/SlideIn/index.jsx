@@ -1,10 +1,8 @@
-import { animated, config, useSpring } from '@react-spring/web'
-import { useState } from 'react'
+import { animated, config, useInView } from '@react-spring/web'
 import { useMediaQuery } from 'react-responsive'
-import { Waypoint } from 'react-waypoint'
 
 const SlideIn = ({ children, reverse }) => {
-  const [inView, setInView] = useState(false)
+  // const [inView, setInView] = useState(false)
 
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1024px)',
@@ -12,29 +10,28 @@ const SlideIn = ({ children, reverse }) => {
 
   let reversed = reverse ? 200 : -200
   reversed = isDesktopOrLaptop ? reversed : 0
-
-  const transition = useSpring({
+  const [ref, springs] = useInView(() => ({
+    threshold: 0.5,
     delay: 200,
-    duration: 400,
     from: {
       opacity: 0,
       x: reversed,
     },
     to: {
-      x: !inView ? 0 : reversed,
-      opacity: !inView ? 0 : 1,
+      x: reversed,
+      opacity: 1,
     },
     leave: {
-      x: !inView ? reversed : 0,
-      opacity: !inView ? 1 : 0,
+      x: 0,
+      opacity: 0,
     },
     config: config.molasses,
-  })
+  }))
 
   return (
-    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)} topOffset={'35%'}>
-      <animated.div style={transition}>{children}</animated.div>
-    </Waypoint>
+    <animated.div ref={ref} style={springs}>
+      {children}
+    </animated.div>
   )
 }
 
