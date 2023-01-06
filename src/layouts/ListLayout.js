@@ -1,10 +1,10 @@
-import Link from '@components/Link'
 import Pagination from '@components/Pagination'
 import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 import formatDate from '@libs/utils/formatDate'
 import { animated, useSpring, useTransition } from '@react-spring/web'
 import { classNames } from '@utils/general'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import AnimatedBorder from '../components/animations/AnimatedBorder'
@@ -18,50 +18,51 @@ const BlogCard = ({ post }) => {
     boxShadow: isHovered ? '0px 0px 10px rgba(0, 0, 0, 0.5)' : '0px 0px 0px rgba(0, 0, 0, 0)',
   })
 
+  const router = useRouter()
+
   return (
     <animated.li
       style={style}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       key={slug}
+      onClick={() => router.push(`/blog/${slug}`)}
       className="relative h-full overflow-hidden rounded-md bg-slate-200 p-6 dark:bg-dark-background lg:w-[20vw]"
     >
-      <Link href={`/blog/${slug}`} className="">
-        {/* Border Animations */}
-        <AnimatedBorder toggle={isHovered} />
+      {/* Border Animations */}
+      <AnimatedBorder toggle={isHovered} />
 
-        <article className="flex flex-col space-y-2 xl:items-baseline xl:space-y-0">
-          <dl>
-            <dt className="sr-only">Published on</dt>
-            <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-              <time dateTime={date}>{formatDate(date)}</time>
-            </dd>
-          </dl>
-          <div className="space-y-3 xl:col-span-3">
-            <div>
-              <h3
-                className={classNames(
-                  'relative z-10 text-2xl font-bold leading-8 tracking-tight',
-                  isHovered && 'text-amber-600 dark:text-amber-400 '
-                )}
-              >
-                {title}
-              </h3>
-              <div className="relative z-10 flex flex-wrap">
-                {tags.map((tag) => (
-                  <Tag key={tag} text={tag} />
-                ))}
-              </div>
-            </div>
-            <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
-              {summary}
+      <article className="flex flex-col space-y-2 xl:items-baseline xl:space-y-0">
+        <dl>
+          <dt className="sr-only">Published on</dt>
+          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+            <time dateTime={date}>{formatDate(date)}</time>
+          </dd>
+        </dl>
+        <div className="space-y-3 xl:col-span-3">
+          <div>
+            <h3
+              className={classNames(
+                'relative z-10 text-2xl font-bold leading-8 tracking-tight',
+                isHovered && 'text-amber-600 dark:text-amber-400 '
+              )}
+            >
+              {title}
+            </h3>
+            <div className="relative z-10 flex flex-wrap">
+              {tags.map((tag) => (
+                <Tag key={tag} text={tag} />
+              ))}
             </div>
           </div>
-        </article>
-        <button className="absolute right-4 bottom-4 z-10">
-          {isHovered && <TrailingArrows toggle={isHovered} />}
-        </button>
-      </Link>
+          <div className="prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400 dark:prose-pre:bg-[#00051D]">
+            {summary}
+          </div>
+        </div>
+      </article>
+      <button className="absolute right-4 bottom-4 z-10">
+        {isHovered && <TrailingArrows toggle={isHovered} />}
+      </button>
     </animated.li>
   )
 }

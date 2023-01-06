@@ -83,7 +83,7 @@ export default function Projects() {
           </p>
         </div>
       ),
-      stack: 'React, Redux, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      stack: 'NextJS, Zustand, Django, DRF, Postgres, Tailwind, Cypress, Docker',
       image: '/static/images/projects/next-oms.png',
       url: 'projects/next-oms',
     },
@@ -99,7 +99,7 @@ export default function Projects() {
           <p>We cover a variety of Blind 75 questions and LeetCode problems.</p>
         </div>
       ),
-      stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      stack: 'NextJS, Zustand, Tailwind, Cypress, MDX',
       image: '/static/images/projects/dsa.png',
       url: 'tags/dsa',
     },
@@ -112,8 +112,7 @@ export default function Projects() {
           skills you need to get the job.
         </div>
       ),
-
-      stack: 'React, Node, Express, MongoDB, MUI, Jest, Enzyme',
+      stack: 'Next, tRPC, Prisma, Postgres, Tailwind, NextAuth, Docker',
       image: '/static/images/projects/mythus.png',
       url: 'https://mythus.io',
     },

@@ -17,15 +17,16 @@ const AboutMe = () => (
 )
 
 const GetInTouch = () => (
-  <Link href="/contact" passHref>
-    <animated.button
+  <animated.button>
+    <Link
       className={
         'mx-auto mt-6 flex rounded-xl border-0 bg-primary-600 py-2 px-8 text-2xl font-bold text-white hover:bg-opacity-80 dark:bg-primary-400 dark:text-[#000621] lg:mx-0'
       }
+      href="/contact"
     >
       Get In Touch
-    </animated.button>
-  </Link>
+    </Link>
+  </animated.button>
 )
 
 export default function Intro() {

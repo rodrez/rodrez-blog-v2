@@ -8,7 +8,6 @@ import Analytics from '@components/analytics'
 import { ClientReload } from '@components/ClientReload'
 import LayoutWrapper from '@components/LayoutWrapper'
 import siteMetadata from '@data/siteMetadata'
-import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'react-hot-toast'
 

@@ -155,7 +155,6 @@ export const BlogSEO = ({
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
         {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
-        <script />
       </Head>
       <Script
         type="application/ld+json"
