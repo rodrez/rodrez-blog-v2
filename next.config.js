@@ -53,10 +53,13 @@ const securityHeaders = [
 ]
 
 module.exports = withBundleAnalyzer({
-  swcMinify: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  /* Telling eslint to lint the files in the directories listed. */
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'utils'],
+  },
+  experimental: {
+    appDir: true,
   },
   images: {
     domains: [

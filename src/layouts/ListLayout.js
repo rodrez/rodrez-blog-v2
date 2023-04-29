@@ -1,6 +1,6 @@
 import Pagination from '@components/Pagination'
 import Tag from '@components/Tag'
-import siteMetadata from '@data/siteMetadata'
+// import siteMetadata from '@data/siteMetadata'
 import formatDate from '@libs/utils/formatDate'
 import { animated, useSpring, useTransition } from '@react-spring/web'
 import { classNames } from '@utils/general'
@@ -95,7 +95,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     }
     let tagHashMap = {}
     for (let index = 0; index < allTask.length; index++) {
-      const task = allTask[index]
+      // const task = allTask[index]
       tagHashMap[allTask[index]] = allTask[index]
     }
     setTags(Object.keys(tagHashMap))
